@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,19 @@ namespace LibraryPawnShop.Models
     [Serializable]
     public class ForSale
     {
-        public ForSale(Deposit dep)
+        public List<Product> Products;
+
+        public ForSale()
         {
-            var pr = new List<Product>();
-            pr.AddRange(dep.Products);
-            Products = pr;
+            Products = new List<Product>();
         }
 
-        public List<Product> Products { get; private set; }
+        public void DepOnSale(Deposit dep)
+        {
+            foreach (var o in dep.Products)
+            {
+                Products.Add(o);
+            }
+        }
     }
 }

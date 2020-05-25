@@ -13,18 +13,19 @@ namespace AdminApp
 {
     public partial class MainForm : Form
     {
-        PawnShop shop;
+        PawnShop Shop;
         LoginForm pred;
 
         public MainForm(LoginForm lg)
         {
             InitializeComponent();
-            shop = new PawnShop();
-            shop.FillTestData(100);
+            Shop = new PawnShop();
+            //Shop.Load();
+            Shop.FillTestData(50);
             pred = lg;
             //DepositBindingSource.DataSource = shop.Deposits;
-            clientBindingSource.DataSource = shop.Clients;
-            productBindingSource.DataSource = shop.Products;
+            clientBindingSource.DataSource = Shop.Clients;
+            depositBindingSource.DataSource = Shop.Deposits;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace AdminApp
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            shop.Load();
+            Shop.Load();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace AdminApp
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            shop.Save();
+            Shop.Save();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,7 +58,7 @@ namespace AdminApp
                     e.Cancel = true;
                     break;
                 case DialogResult.Yes:
-                    shop.Save();
+                    Shop.Save();
                     pred.Close();
                     break;
                 case DialogResult.No:
@@ -89,7 +90,27 @@ namespace AdminApp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            shop.DateCheck();
+            int prev = Shop.ForSale.Count;
+            Shop.DateCheck();
+            if (prev < Shop.ForSale.Count)
+            {
+                foreach (var o in Shop.ForSale)
+                {
+                    ForSaleGrid.Rows.Add(o.Name);
+                }
+                depositBindingSource.DataSource = null;
+                depositBindingSource.DataSource = Shop.Deposits;
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ClientsGrid.Rows[0].Selected = false;
         }
     }
 }

@@ -18,7 +18,6 @@ namespace LibraryPawnShop.Models
         public string Unit { set; get; }
         public int Sample { get; set; }
         public Image Image { set; get; }
-        public Client Client { private set; get; }
         public DateTime DateTime { set; get; }
         public DateTime DateTimeBuyOut { set; get; }
     }

@@ -36,8 +36,8 @@ namespace LibraryPawnShop.DAL
                 PawnShop sh = (PawnShop)serializer.Deserialize(stream);
                 Copy(sh.Products, shop.Products);
                 Copy(sh.Clients, shop.Clients);
-                //Copy(sh.Deposits, shop.Deposits);
-                Copy(sh.ForSales, shop.ForSales);
+                Copy(sh.Deposits, shop.Deposits);
+                Copy(sh.ForSale, shop.ForSale);
             }
         }
         private void Copy<T>(List<T> from, List<T> to)

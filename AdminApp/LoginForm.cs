@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryPawnShop.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,13 @@ namespace AdminApp
     {
         private string login;
         private string password;
+        //PawnShop shop;
 
         public LoginForm()
         {
             InitializeComponent();
+            //shop = new PawnShop();
+            //shop.Load();
             using (var rd = new StreamReader("admpass.txt"))
             {
                 login = rd.ReadLine();
