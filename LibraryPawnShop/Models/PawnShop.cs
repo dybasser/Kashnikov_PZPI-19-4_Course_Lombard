@@ -133,6 +133,18 @@ namespace LibraryPawnShop.Models
             }
         }
 
+        public void ForSaleDelete(string name)
+        {
+            for (int i = 0; i < ForSale.Count; ++i)
+            {
+                if (ForSale[i].Name == name)
+                {
+                    ForSale.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
         public void Save()
         {
             new Dao(this).Save();

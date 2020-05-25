@@ -24,8 +24,9 @@ namespace AdminApp
             Shop.FillTestData(50);
             pred = lg;
             //DepositBindingSource.DataSource = shop.Deposits;
-            clientBindingSource.DataSource = Shop.Clients;
-            depositBindingSource.DataSource = Shop.Deposits;
+            ClientBindingSource.DataSource = Shop.Clients;
+            DepositBindingSource.DataSource = Shop.Deposits;
+            ForSaleBindingSource.DataSource = Shop.ForSale;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,8 +99,8 @@ namespace AdminApp
                 {
                     ForSaleGrid.Rows.Add(o.Name);
                 }
-                depositBindingSource.DataSource = null;
-                depositBindingSource.DataSource = Shop.Deposits;
+                DepositBindingSource.ResetBindings(true);
+                ForSaleBindingSource.ResetBindings(true);
             }
         }
 
@@ -111,6 +112,11 @@ namespace AdminApp
         private void MainForm_Load(object sender, EventArgs e)
         {
             ClientsGrid.Rows[0].Selected = false;
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
