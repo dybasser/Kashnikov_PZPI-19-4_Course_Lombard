@@ -145,6 +145,15 @@ namespace LibraryPawnShop.Models
             }
         }
 
+        public Client SearchClient(string name)
+        {
+            foreach (var cl in Clients)
+            {
+                if (cl.Name == name) return cl;
+            }
+            return null;
+        }
+
         public void Save()
         {
             new Dao(this).Save();

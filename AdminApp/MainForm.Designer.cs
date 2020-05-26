@@ -41,24 +41,39 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClientsGrid = new System.Windows.Forms.DataGridView();
+            this.ClientsGridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientsGridEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DateCheck = new System.Windows.Forms.Button();
             this.DepositsGrid = new System.Windows.Forms.DataGridView();
-            this.ForSaleGrid = new System.Windows.Forms.DataGridView();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeBuyOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepositBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClientsGridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientsGridEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.Button();
-            this.ForSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ForSaleGrid = new System.Windows.Forms.DataGridView();
             this.ForSaleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sampleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dateTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeBuyOutDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Delete = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientsGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DepositsGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ForSaleGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DepositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepositsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepositBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ForSaleGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ForSaleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,7 +170,12 @@
             this.ClientsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClientsGridName,
-            this.ClientsGridEmail});
+            this.ClientsGridEmail,
+            this.idDataGridViewTextBoxColumn1,
+            this.emailDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn1,
+            this.passwordDataGridViewTextBoxColumn});
             this.ClientsGrid.Cursor = System.Windows.Forms.Cursors.Default;
             this.ClientsGrid.DataSource = this.ClientBindingSource;
             this.ClientsGrid.Location = new System.Drawing.Point(12, 27);
@@ -165,7 +185,62 @@
             this.ClientsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ClientsGrid.Size = new System.Drawing.Size(299, 600);
             this.ClientsGrid.TabIndex = 3;
-            this.ClientsGrid.DoubleClick += new System.EventHandler(this.productList_DoubleClick);
+            this.ClientsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientsGrid_CellContentClick);
+            this.ClientsGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ClientsGrid_CellMouseDoubleClick);
+            this.ClientsGrid.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ClientsGrid_ColumnHeaderMouseDoubleClick);
+            // 
+            // ClientsGridName
+            // 
+            this.ClientsGridName.DataPropertyName = "Name";
+            this.ClientsGridName.HeaderText = "Name";
+            this.ClientsGridName.Name = "ClientsGridName";
+            this.ClientsGridName.ReadOnly = true;
+            // 
+            // ClientsGridEmail
+            // 
+            this.ClientsGridEmail.DataPropertyName = "Email";
+            this.ClientsGridEmail.HeaderText = "Email";
+            this.ClientsGridEmail.Name = "ClientsGridEmail";
+            this.ClientsGridEmail.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ClientBindingSource
+            // 
+            this.ClientBindingSource.DataSource = typeof(LibraryPawnShop.Models.Client);
             // 
             // DateCheck
             // 
@@ -195,23 +270,6 @@
             this.DepositsGrid.Size = new System.Drawing.Size(343, 600);
             this.DepositsGrid.TabIndex = 5;
             // 
-            // ForSaleGrid
-            // 
-            this.ForSaleGrid.AllowUserToAddRows = false;
-            this.ForSaleGrid.AllowUserToDeleteRows = false;
-            this.ForSaleGrid.AutoGenerateColumns = false;
-            this.ForSaleGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ForSaleGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ForSaleName});
-            this.ForSaleGrid.DataSource = this.ForSaleBindingSource;
-            this.ForSaleGrid.Location = new System.Drawing.Point(767, 27);
-            this.ForSaleGrid.Name = "ForSaleGrid";
-            this.ForSaleGrid.ReadOnly = true;
-            this.ForSaleGrid.RowHeadersVisible = false;
-            this.ForSaleGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ForSaleGrid.Size = new System.Drawing.Size(240, 600);
-            this.ForSaleGrid.TabIndex = 6;
-            // 
             // dateTimeDataGridViewTextBoxColumn
             // 
             this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
@@ -230,23 +288,113 @@
             // 
             this.DepositBindingSource.DataSource = typeof(LibraryPawnShop.Models.Deposit);
             // 
-            // ClientBindingSource
+            // ForSaleGrid
             // 
-            this.ClientBindingSource.DataSource = typeof(LibraryPawnShop.Models.Client);
+            this.ForSaleGrid.AllowUserToAddRows = false;
+            this.ForSaleGrid.AllowUserToDeleteRows = false;
+            this.ForSaleGrid.AutoGenerateColumns = false;
+            this.ForSaleGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ForSaleGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ForSaleName,
+            this.idDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.weightDataGridViewTextBoxColumn,
+            this.unitDataGridViewTextBoxColumn,
+            this.sampleDataGridViewTextBoxColumn,
+            this.imageDataGridViewImageColumn,
+            this.dateTimeDataGridViewTextBoxColumn1,
+            this.dateTimeBuyOutDataGridViewTextBoxColumn1});
+            this.ForSaleGrid.DataSource = this.ForSaleBindingSource;
+            this.ForSaleGrid.Location = new System.Drawing.Point(767, 27);
+            this.ForSaleGrid.Name = "ForSaleGrid";
+            this.ForSaleGrid.ReadOnly = true;
+            this.ForSaleGrid.RowHeadersVisible = false;
+            this.ForSaleGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ForSaleGrid.Size = new System.Drawing.Size(240, 600);
+            this.ForSaleGrid.TabIndex = 6;
             // 
-            // ClientsGridName
+            // ForSaleName
             // 
-            this.ClientsGridName.DataPropertyName = "Name";
-            this.ClientsGridName.HeaderText = "Name";
-            this.ClientsGridName.Name = "ClientsGridName";
-            this.ClientsGridName.ReadOnly = true;
+            this.ForSaleName.DataPropertyName = "Name";
+            this.ForSaleName.HeaderText = "Name";
+            this.ForSaleName.Name = "ForSaleName";
+            this.ForSaleName.ReadOnly = true;
             // 
-            // ClientsGridEmail
+            // idDataGridViewTextBoxColumn
             // 
-            this.ClientsGridEmail.DataPropertyName = "Email";
-            this.ClientsGridEmail.HeaderText = "Email";
-            this.ClientsGridEmail.Name = "ClientsGridEmail";
-            this.ClientsGridEmail.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // weightDataGridViewTextBoxColumn
+            // 
+            this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
+            this.weightDataGridViewTextBoxColumn.HeaderText = "Weight";
+            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+            this.weightDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sampleDataGridViewTextBoxColumn
+            // 
+            this.sampleDataGridViewTextBoxColumn.DataPropertyName = "Sample";
+            this.sampleDataGridViewTextBoxColumn.HeaderText = "Sample";
+            this.sampleDataGridViewTextBoxColumn.Name = "sampleDataGridViewTextBoxColumn";
+            this.sampleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.HeaderText = "Image";
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // dateTimeDataGridViewTextBoxColumn1
+            // 
+            this.dateTimeDataGridViewTextBoxColumn1.DataPropertyName = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn1.HeaderText = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn1.Name = "dateTimeDataGridViewTextBoxColumn1";
+            this.dateTimeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateTimeBuyOutDataGridViewTextBoxColumn1
+            // 
+            this.dateTimeBuyOutDataGridViewTextBoxColumn1.DataPropertyName = "DateTimeBuyOut";
+            this.dateTimeBuyOutDataGridViewTextBoxColumn1.HeaderText = "DateTimeBuyOut";
+            this.dateTimeBuyOutDataGridViewTextBoxColumn1.Name = "dateTimeBuyOutDataGridViewTextBoxColumn1";
+            this.dateTimeBuyOutDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // ForSaleBindingSource
+            // 
+            this.ForSaleBindingSource.DataSource = typeof(LibraryPawnShop.Models.Product);
             // 
             // Delete
             // 
@@ -257,17 +405,6 @@
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // ForSaleBindingSource
-            // 
-            this.ForSaleBindingSource.DataSource = typeof(LibraryPawnShop.Models.Product);
-            // 
-            // ForSaleName
-            // 
-            this.ForSaleName.DataPropertyName = "Name";
-            this.ForSaleName.HeaderText = "Name";
-            this.ForSaleName.Name = "ForSaleName";
-            this.ForSaleName.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -289,10 +426,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientsGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DepositsGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ForSaleGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DepositBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepositsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepositBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ForSaleGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ForSaleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -324,6 +461,21 @@
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn ForSaleName;
         private System.Windows.Forms.BindingSource ForSaleBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sampleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeBuyOutDataGridViewTextBoxColumn1;
     }
 }
 

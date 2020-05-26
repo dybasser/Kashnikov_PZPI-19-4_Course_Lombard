@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace AdminApp
     public partial class MainForm : Form
     {
         PawnShop Shop;
-        LoginForm pred;
+        LoginForm Pred;
 
         public MainForm(LoginForm lg)
         {
@@ -22,8 +23,18 @@ namespace AdminApp
             Shop = new PawnShop();
             //Shop.Load();
             Shop.FillTestData(50);
-            pred = lg;
-            //DepositBindingSource.DataSource = shop.Deposits;
+            Pred = lg;
+            ClientBindingSource.DataSource = Shop.Clients;
+            DepositBindingSource.DataSource = Shop.Deposits;
+            ForSaleBindingSource.DataSource = Shop.ForSale;
+        }
+
+        public MainForm()
+        {
+            InitializeComponent();
+            Shop = new PawnShop();
+            //Shop.Load();
+            Shop.FillTestData(50);
             ClientBindingSource.DataSource = Shop.Clients;
             DepositBindingSource.DataSource = Shop.Deposits;
             ForSaleBindingSource.DataSource = Shop.ForSale;
@@ -60,10 +71,10 @@ namespace AdminApp
                     break;
                 case DialogResult.Yes:
                     Shop.Save();
-                    pred.Close();
+                    Pred.Close();
                     break;
                 case DialogResult.No:
-                    pred.Close();
+                    //Pred.Close();
                     break;
             }
         }
@@ -91,14 +102,10 @@ namespace AdminApp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            int prev = Shop.ForSale.Count;
+            int n = Shop.ForSale.Count;
             Shop.DateCheck();
-            if (prev < Shop.ForSale.Count)
+            if (Shop.ForSale.Count > n)
             {
-                foreach (var o in Shop.ForSale)
-                {
-                    ForSaleGrid.Rows.Add(o.Name);
-                }
                 DepositBindingSource.ResetBindings(true);
                 ForSaleBindingSource.ResetBindings(true);
             }
@@ -116,7 +123,40 @@ namespace AdminApp
 
         private void Delete_Click(object sender, EventArgs e)
         {
+            string item = (string)ForSaleGrid.SelectedRows[0].Cells[0].Value;
+            Shop.ForSaleDelete(item);
+            ForSaleBindingSource.ResetBindings(true);
+        }
+
+        private void ClientsGrid_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //while (ClientsGrid.SelectedRows.Count != 0)
+            //    ClientsGrid.SelectedRows[0].Selected = false;
+        }
+
+        private void ClientsGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[0].Value);
+                ClientInfoForm clientInfoForm = new ClientInfoForm(client);
+                clientInfoForm.Show();
+            }
+            catch
+            {
+
+            }
             
+        }
+
+        private void ClientsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           // MessageBox.Show("cho");
+        }
+
+        private void ClientsGrid_ColumnDividerDoubleClick(object sender, DataGridViewColumnDividerDoubleClickEventArgs e)
+        {
+            //MessageBox.Show("right");
         }
     }
 }
