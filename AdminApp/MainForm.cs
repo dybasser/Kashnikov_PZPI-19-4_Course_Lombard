@@ -63,20 +63,20 @@ namespace AdminApp
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             // есть ли изменённые данные
-            var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
-            switch (res)
-            {
-                case DialogResult.Cancel:
-                    e.Cancel = true;
-                    break;
-                case DialogResult.Yes:
-                    Shop.Save();
-                    Pred.Close();
-                    break;
-                case DialogResult.No:
-                    //Pred.Close();
-                    break;
-            }
+            //var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
+            //switch (res)
+            //{
+            //    case DialogResult.Cancel:
+            //        e.Cancel = true;
+            //        break;
+            //    case DialogResult.Yes:
+            //        Shop.Save();
+            //        Pred.Close();
+            //        break;
+            //    case DialogResult.No:
+            //        //Pred.Close();
+            //        break;
+            //}
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,7 +139,7 @@ namespace AdminApp
             try
             {
                 Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[0].Value);
-                ClientInfoForm clientInfoForm = new ClientInfoForm(client);
+                ClientInfoForm clientInfoForm = new ClientInfoForm(client, Shop);
                 clientInfoForm.Show();
             }
             catch

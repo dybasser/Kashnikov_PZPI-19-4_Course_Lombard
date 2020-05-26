@@ -20,9 +20,15 @@ namespace LibraryPawnShop.Models
             DateTimeBuyOut = DateTime.AddSeconds(10);
         }
 
-        public List<Product> Products { private set; get; }
-        public Client Client { private set; get; }
-        public DateTime DateTime { private set; get; }
-        public DateTime DateTimeBuyOut { private set; get; }
+        public Deposit()
+        {
+
+        }
+
+        public List<Product> Products { set; get; }
+        public Client Client { set; get; }
+        public DateTime DateTime { set; get; }
+        public DateTime DateTimeBuyOut { set; get; }
+        public string Name { get; set; }
     }
 }

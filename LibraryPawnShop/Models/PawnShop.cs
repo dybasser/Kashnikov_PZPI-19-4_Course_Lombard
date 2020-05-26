@@ -112,6 +112,7 @@ namespace LibraryPawnShop.Models
                 };
                 Clients.Add(B);
                 Deposits.Add(new Deposit(dep, B, DateTime.Now + TimeSpan.FromDays(i)));
+                Deposits[i].Name = $"Deposit{i}";
             }
             // ForSale
             //foreach (var dep in Deposits)
@@ -131,6 +132,16 @@ namespace LibraryPawnShop.Models
                     Deposits.RemoveAt(i);
                 }
             }
+        }
+
+        public List<Deposit> FindDeposits(Client client)
+        {
+            var deposits = new List<Deposit>();
+            foreach (var dep in Deposits)
+            {
+                if (dep.Client == client) deposits.Add(dep);
+            }
+            return deposits;
         }
 
         public void ForSaleDelete(string name)
