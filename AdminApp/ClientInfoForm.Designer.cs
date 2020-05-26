@@ -80,15 +80,19 @@
             // 
             this.InfoNameBox.Location = new System.Drawing.Point(12, 53);
             this.InfoNameBox.Name = "InfoNameBox";
+            this.InfoNameBox.ReadOnly = true;
             this.InfoNameBox.Size = new System.Drawing.Size(246, 20);
             this.InfoNameBox.TabIndex = 1;
+            this.InfoNameBox.TabStop = false;
             // 
             // InfoEmailBox
             // 
             this.InfoEmailBox.Location = new System.Drawing.Point(13, 116);
             this.InfoEmailBox.Name = "InfoEmailBox";
+            this.InfoEmailBox.ReadOnly = true;
             this.InfoEmailBox.Size = new System.Drawing.Size(245, 20);
             this.InfoEmailBox.TabIndex = 2;
+            this.InfoEmailBox.TabStop = false;
             // 
             // LabelInfoName
             // 
@@ -113,8 +117,10 @@
             this.InfoPasswordBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.InfoPasswordBox.Location = new System.Drawing.Point(12, 181);
             this.InfoPasswordBox.Name = "InfoPasswordBox";
+            this.InfoPasswordBox.ReadOnly = true;
             this.InfoPasswordBox.Size = new System.Drawing.Size(246, 20);
             this.InfoPasswordBox.TabIndex = 5;
+            this.InfoPasswordBox.TabStop = false;
             // 
             // LabelInfoPassword
             // 
@@ -129,8 +135,10 @@
             // 
             this.InfoAgeBox.Location = new System.Drawing.Point(12, 254);
             this.InfoAgeBox.Name = "InfoAgeBox";
+            this.InfoAgeBox.ReadOnly = true;
             this.InfoAgeBox.Size = new System.Drawing.Size(39, 20);
             this.InfoAgeBox.TabIndex = 7;
+            this.InfoAgeBox.TabStop = false;
             // 
             // LabelInfoAge
             // 
@@ -145,8 +153,10 @@
             // 
             this.InfoRankBox.Location = new System.Drawing.Point(12, 323);
             this.InfoRankBox.Name = "InfoRankBox";
+            this.InfoRankBox.ReadOnly = true;
             this.InfoRankBox.Size = new System.Drawing.Size(39, 20);
             this.InfoRankBox.TabIndex = 9;
+            this.InfoRankBox.TabStop = false;
             // 
             // LabelInfoRank
             // 
@@ -237,15 +247,19 @@
             // 
             this.DateTimeBox.Location = new System.Drawing.Point(371, 116);
             this.DateTimeBox.Name = "DateTimeBox";
+            this.DateTimeBox.ReadOnly = true;
             this.DateTimeBox.Size = new System.Drawing.Size(137, 20);
             this.DateTimeBox.TabIndex = 14;
+            this.DateTimeBox.TabStop = false;
             // 
             // DateTimeBuyOutBox
             // 
             this.DateTimeBuyOutBox.Location = new System.Drawing.Point(533, 116);
             this.DateTimeBuyOutBox.Name = "DateTimeBuyOutBox";
+            this.DateTimeBuyOutBox.ReadOnly = true;
             this.DateTimeBuyOutBox.Size = new System.Drawing.Size(137, 20);
             this.DateTimeBuyOutBox.TabIndex = 15;
+            this.DateTimeBuyOutBox.TabStop = false;
             // 
             // label2
             // 
