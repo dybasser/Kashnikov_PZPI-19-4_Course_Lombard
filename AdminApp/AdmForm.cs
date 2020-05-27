@@ -106,9 +106,17 @@ namespace AdminApp
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            string item = (string)ForSaleGrid.SelectedRows[0].Cells[0].Value;
-            Shop.ForSaleDelete(item);
-            ForSaleBindingSource.ResetBindings(true);
+            try
+            {
+                string item = (string)ForSaleGrid.SelectedRows[0].Cells[0].Value;
+                Shop.ForSaleDelete(item);
+                ForSaleBindingSource.ResetBindings(true);
+            }
+            catch
+            {
+
+            }
+            
         }
 
         private void ClientsGrid_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

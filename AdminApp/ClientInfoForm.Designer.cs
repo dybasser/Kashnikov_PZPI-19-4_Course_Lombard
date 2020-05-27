@@ -49,6 +49,7 @@
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DateTimeBox = new System.Windows.Forms.TextBox();
             this.DateTimeBuyOutBox = new System.Windows.Forms.TextBox();
@@ -72,7 +73,6 @@
             this.DepositComboBox.Size = new System.Drawing.Size(196, 21);
             this.DepositComboBox.TabIndex = 11;
             this.DepositComboBox.ValueMember = "Name";
-            this.DepositComboBox.SelectedIndexChanged += new System.EventHandler(this.DepositComboBox_SelectedIndexChanged);
             this.DepositComboBox.SelectionChangeCommitted += new System.EventHandler(this.DepositComboBox_SelectionChangeCommitted);
             // 
             // depositBindingSource
@@ -81,26 +81,24 @@
             // 
             // InfoNameBox
             // 
-            this.InfoNameBox.Location = new System.Drawing.Point(12, 53);
+            this.InfoNameBox.Location = new System.Drawing.Point(16, 53);
             this.InfoNameBox.Name = "InfoNameBox";
             this.InfoNameBox.ReadOnly = true;
             this.InfoNameBox.Size = new System.Drawing.Size(246, 20);
             this.InfoNameBox.TabIndex = 1;
-            this.InfoNameBox.TabStop = false;
             // 
             // InfoEmailBox
             // 
-            this.InfoEmailBox.Location = new System.Drawing.Point(13, 116);
+            this.InfoEmailBox.Location = new System.Drawing.Point(17, 116);
             this.InfoEmailBox.Name = "InfoEmailBox";
             this.InfoEmailBox.ReadOnly = true;
             this.InfoEmailBox.Size = new System.Drawing.Size(245, 20);
             this.InfoEmailBox.TabIndex = 2;
-            this.InfoEmailBox.TabStop = false;
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(9, 37);
+            this.NameLabel.Location = new System.Drawing.Point(14, 37);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(35, 13);
             this.NameLabel.TabIndex = 3;
@@ -109,7 +107,7 @@
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(9, 100);
+            this.EmailLabel.Location = new System.Drawing.Point(14, 100);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(32, 13);
             this.EmailLabel.TabIndex = 4;
@@ -118,17 +116,16 @@
             // InfoPasswordBox
             // 
             this.InfoPasswordBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.InfoPasswordBox.Location = new System.Drawing.Point(12, 181);
+            this.InfoPasswordBox.Location = new System.Drawing.Point(16, 181);
             this.InfoPasswordBox.Name = "InfoPasswordBox";
             this.InfoPasswordBox.ReadOnly = true;
             this.InfoPasswordBox.Size = new System.Drawing.Size(246, 20);
             this.InfoPasswordBox.TabIndex = 5;
-            this.InfoPasswordBox.TabStop = false;
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(9, 165);
+            this.PasswordLabel.Location = new System.Drawing.Point(13, 165);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 6;
@@ -136,17 +133,16 @@
             // 
             // InfoAgeBox
             // 
-            this.InfoAgeBox.Location = new System.Drawing.Point(12, 254);
+            this.InfoAgeBox.Location = new System.Drawing.Point(16, 251);
             this.InfoAgeBox.Name = "InfoAgeBox";
             this.InfoAgeBox.ReadOnly = true;
             this.InfoAgeBox.Size = new System.Drawing.Size(39, 20);
             this.InfoAgeBox.TabIndex = 7;
-            this.InfoAgeBox.TabStop = false;
             // 
             // AgeLabel
             // 
             this.AgeLabel.AutoSize = true;
-            this.AgeLabel.Location = new System.Drawing.Point(13, 235);
+            this.AgeLabel.Location = new System.Drawing.Point(14, 235);
             this.AgeLabel.Name = "AgeLabel";
             this.AgeLabel.Size = new System.Drawing.Size(26, 13);
             this.AgeLabel.TabIndex = 8;
@@ -154,17 +150,16 @@
             // 
             // InfoRankBox
             // 
-            this.InfoRankBox.Location = new System.Drawing.Point(12, 323);
+            this.InfoRankBox.Location = new System.Drawing.Point(16, 320);
             this.InfoRankBox.Name = "InfoRankBox";
             this.InfoRankBox.ReadOnly = true;
             this.InfoRankBox.Size = new System.Drawing.Size(39, 20);
             this.InfoRankBox.TabIndex = 9;
-            this.InfoRankBox.TabStop = false;
             // 
             // RankLabel
             // 
             this.RankLabel.AutoSize = true;
-            this.RankLabel.Location = new System.Drawing.Point(12, 304);
+            this.RankLabel.Location = new System.Drawing.Point(14, 304);
             this.RankLabel.Name = "RankLabel";
             this.RankLabel.Size = new System.Drawing.Size(33, 13);
             this.RankLabel.TabIndex = 10;
@@ -191,13 +186,15 @@
             this.sampleDataGridViewTextBoxColumn,
             this.weightDataGridViewTextBoxColumn,
             this.unitDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
+            this.priceDataGridViewTextBoxColumn,
+            this.Image});
             this.ProductGrid.DataSource = this.productBindingSource;
-            this.ProductGrid.Location = new System.Drawing.Point(305, 181);
+            this.ProductGrid.Location = new System.Drawing.Point(371, 181);
             this.ProductGrid.Name = "ProductGrid";
             this.ProductGrid.ReadOnly = true;
             this.ProductGrid.RowHeadersVisible = false;
-            this.ProductGrid.Size = new System.Drawing.Size(389, 257);
+            this.ProductGrid.RowTemplate.Height = 35;
+            this.ProductGrid.Size = new System.Drawing.Size(323, 257);
             this.ProductGrid.TabIndex = 13;
             // 
             // nameDataGridViewTextBoxColumn
@@ -242,6 +239,14 @@
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Image
+            // 
+            this.Image.DataPropertyName = "Image";
+            this.Image.HeaderText = "Image";
+            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(LibraryPawnShop.Models.Product);
@@ -253,7 +258,6 @@
             this.DateTimeBox.ReadOnly = true;
             this.DateTimeBox.Size = new System.Drawing.Size(137, 20);
             this.DateTimeBox.TabIndex = 14;
-            this.DateTimeBox.TabStop = false;
             // 
             // DateTimeBuyOutBox
             // 
@@ -262,7 +266,6 @@
             this.DateTimeBuyOutBox.ReadOnly = true;
             this.DateTimeBuyOutBox.Size = new System.Drawing.Size(137, 20);
             this.DateTimeBuyOutBox.TabIndex = 15;
-            this.DateTimeBuyOutBox.TabStop = false;
             // 
             // label2
             // 
@@ -341,17 +344,18 @@
         private System.Windows.Forms.Label DepComboBoxLabel;
         private System.Windows.Forms.DataGridView ProductGrid;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sampleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox DateTimeBox;
         private System.Windows.Forms.TextBox DateTimeBuyOutBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox DepositComboBox;
         private System.Windows.Forms.Button BuyOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sampleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn Image;
     }
 }

@@ -78,10 +78,5 @@ namespace AdminApp
                 //productBindingSource.ResetBindings(true);
             }
         }
-
-        private void DepositComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

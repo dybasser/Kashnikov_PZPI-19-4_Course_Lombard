@@ -25,8 +25,8 @@ namespace StartApp
         {
             InitializeComponent();
             Shop = new PawnShop();
-            //Shop.Load();
-            Shop.FillTestData(50);
+            Shop.Load();
+            //Shop.FillTestData(50);
             using (var rd = new StreamReader("pass.txt"))
             {
                 admlogin = rd.ReadLine();
@@ -55,6 +55,17 @@ namespace StartApp
                 }
                 else
                     MessageBox.Show("Wrong");
+            }
+        }
+
+        private void SingUpButton_Click(object sender, EventArgs e)
+        {
+            RegForm reg = new RegForm(Shop.Clients);
+            this.Visible = false;
+            if (reg.ShowDialog() == DialogResult.OK)
+            {
+                this.Visible = true;
+                Shop.Save();
             }
         }
     }
