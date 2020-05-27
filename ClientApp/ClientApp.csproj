@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdminApp\AdminApp.csproj">
+      <Project>{70eea39f-0164-4c59-aecd-481f273c8231}</Project>
+      <Name>AdminApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibraryPawnShop\LibraryPawnShop.csproj">
+      <Project>{db467d14-2617-4e6c-b8ff-4aaef6c20b78}</Project>
+      <Name>LibraryPawnShop</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

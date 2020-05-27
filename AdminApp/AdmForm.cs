@@ -16,12 +16,10 @@ namespace AdminApp
     {
         PawnShop Shop;
 
-        public AdmForm()
+        public AdmForm(PawnShop shop)
         {
             InitializeComponent();
-            Shop = new PawnShop();
-            //Shop.Load();
-            Shop.FillTestData(50);
+            Shop = shop;
             ClientBindingSource.DataSource = Shop.Clients;
             DepositBindingSource.DataSource = Shop.Deposits;
             ForSaleBindingSource.DataSource = Shop.ForSale;

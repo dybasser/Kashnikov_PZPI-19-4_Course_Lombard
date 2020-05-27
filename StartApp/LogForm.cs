@@ -1,5 +1,6 @@
 ﻿using AdminApp;
 using ClientApp;
+using LibraryPawnShop.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,32 +16,45 @@ namespace StartApp
 {
     public partial class LogForm : Form
     {
-        string login;
-        string password;
+        string admlogin;
+        string admpassword;
+
+        PawnShop Shop;
 
         public LogForm()
         {
             InitializeComponent();
+            Shop = new PawnShop();
+            //Shop.Load();
+            Shop.FillTestData(50);
             using (var rd = new StreamReader("pass.txt"))
             {
-                login = rd.ReadLine();
-                password = rd.ReadLine();
+                admlogin = rd.ReadLine();
+                admpassword = rd.ReadLine();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == login && textBox2.Text == password)
+            if (textBox1.Text == admlogin && textBox2.Text == admpassword)
             {
-                AdmForm adm = new AdmForm();
+                AdmForm adm = new AdmForm(Shop);
                 this.Visible = false;
                 adm.Show();
             }
             else
             {
-                ClientForm client = new ClientForm();
-                this.Visible = false;
-                client.Show();
+                string login = textBox1.Text;
+                string password = textBox2.Text;
+                Client client = Shop.SearchClient(login);
+                if (client != null && client.Password == password)
+                {
+                    ClientInfoForm clientF = new ClientInfoForm(client, Shop, true);
+                    this.Visible = false;
+                    clientF.Show();
+                }
+                else
+                    MessageBox.Show("Wrong");
             }
         }
     }

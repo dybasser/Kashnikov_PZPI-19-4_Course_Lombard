@@ -17,15 +17,31 @@ namespace AdminApp
         PawnShop Shop;
         List<Deposit> Deposits;
 
-        public ClientInfoForm(Client client, PawnShop shop)
+        public ClientInfoForm(Client client, PawnShop shop, bool IsClient = false)
         {
             InitializeComponent();
             Client = client;
             Shop = shop;
-            InfoNameBox.Text = Client.Name;
-            InfoAgeBox.Text = Convert.ToString(Client.Age);
-            InfoEmailBox.Text = Client.Email;
-            InfoPasswordBox.Text = Client.Password;
+            if (IsClient == false)
+            {
+                InfoNameBox.Text = Client.Name;
+                InfoAgeBox.Text = Convert.ToString(Client.Age);
+                InfoEmailBox.Text = Client.Email;
+                InfoPasswordBox.Text = Client.Password;
+            }
+            else
+            {
+                InfoNameBox.Visible = false;
+                InfoAgeBox.Visible = false;
+                InfoEmailBox.Visible = false;
+                InfoPasswordBox.Visible = false;
+                InfoRankBox.Visible = false;
+                AgeLabel.Visible = false;
+                NameLabel.Visible = false;
+                PasswordLabel.Visible = false;
+                EmailLabel.Visible = false;
+                RankLabel.Visible = false;
+            }
             Deposits = Shop.FindDeposits(Client);
             if (Deposits.Count != 0)
             {

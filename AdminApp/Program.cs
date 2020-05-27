@@ -17,7 +17,7 @@ namespace AdminApp
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdmForm());
+            //Application.Run(new AdmForm());
         }
     }
 }

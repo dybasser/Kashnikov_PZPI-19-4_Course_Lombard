@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdminApp;
+using LibraryPawnShop.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,25 @@ namespace ClientApp
 {
     public partial class ClientForm : Form
     {
+        Client Client;
+        PawnShop Shop;
+
+        public ClientForm(Client client, PawnShop shop)
+        {
+            InitializeComponent();
+            Client = client;
+            Shop = shop;
+        }
+
         public ClientForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClientInfoForm clientInfo = new ClientInfoForm(Client, Shop);
+            clientInfo.Show();
         }
     }
 }

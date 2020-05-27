@@ -33,14 +33,14 @@
             this.depositBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.InfoNameBox = new System.Windows.Forms.TextBox();
             this.InfoEmailBox = new System.Windows.Forms.TextBox();
-            this.LabelInfoName = new System.Windows.Forms.Label();
-            this.LabelInfoEmail = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
             this.InfoPasswordBox = new System.Windows.Forms.TextBox();
-            this.LabelInfoPassword = new System.Windows.Forms.Label();
+            this.PasswordLabel = new System.Windows.Forms.Label();
             this.InfoAgeBox = new System.Windows.Forms.TextBox();
-            this.LabelInfoAge = new System.Windows.Forms.Label();
+            this.AgeLabel = new System.Windows.Forms.Label();
             this.InfoRankBox = new System.Windows.Forms.TextBox();
-            this.LabelInfoRank = new System.Windows.Forms.Label();
+            this.RankLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ProductGrid = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,23 +94,23 @@
             this.InfoEmailBox.TabIndex = 2;
             this.InfoEmailBox.TabStop = false;
             // 
-            // LabelInfoName
+            // NameLabel
             // 
-            this.LabelInfoName.AutoSize = true;
-            this.LabelInfoName.Location = new System.Drawing.Point(9, 37);
-            this.LabelInfoName.Name = "LabelInfoName";
-            this.LabelInfoName.Size = new System.Drawing.Size(35, 13);
-            this.LabelInfoName.TabIndex = 3;
-            this.LabelInfoName.Text = "Name";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(9, 37);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameLabel.TabIndex = 3;
+            this.NameLabel.Text = "Name";
             // 
-            // LabelInfoEmail
+            // EmailLabel
             // 
-            this.LabelInfoEmail.AutoSize = true;
-            this.LabelInfoEmail.Location = new System.Drawing.Point(9, 100);
-            this.LabelInfoEmail.Name = "LabelInfoEmail";
-            this.LabelInfoEmail.Size = new System.Drawing.Size(32, 13);
-            this.LabelInfoEmail.TabIndex = 4;
-            this.LabelInfoEmail.Text = "Email";
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Location = new System.Drawing.Point(9, 100);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(32, 13);
+            this.EmailLabel.TabIndex = 4;
+            this.EmailLabel.Text = "Email";
             // 
             // InfoPasswordBox
             // 
@@ -122,14 +122,14 @@
             this.InfoPasswordBox.TabIndex = 5;
             this.InfoPasswordBox.TabStop = false;
             // 
-            // LabelInfoPassword
+            // PasswordLabel
             // 
-            this.LabelInfoPassword.AutoSize = true;
-            this.LabelInfoPassword.Location = new System.Drawing.Point(9, 165);
-            this.LabelInfoPassword.Name = "LabelInfoPassword";
-            this.LabelInfoPassword.Size = new System.Drawing.Size(53, 13);
-            this.LabelInfoPassword.TabIndex = 6;
-            this.LabelInfoPassword.Text = "Password";
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Location = new System.Drawing.Point(9, 165);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
+            this.PasswordLabel.TabIndex = 6;
+            this.PasswordLabel.Text = "Password";
             // 
             // InfoAgeBox
             // 
@@ -140,14 +140,14 @@
             this.InfoAgeBox.TabIndex = 7;
             this.InfoAgeBox.TabStop = false;
             // 
-            // LabelInfoAge
+            // AgeLabel
             // 
-            this.LabelInfoAge.AutoSize = true;
-            this.LabelInfoAge.Location = new System.Drawing.Point(13, 235);
-            this.LabelInfoAge.Name = "LabelInfoAge";
-            this.LabelInfoAge.Size = new System.Drawing.Size(26, 13);
-            this.LabelInfoAge.TabIndex = 8;
-            this.LabelInfoAge.Text = "Age";
+            this.AgeLabel.AutoSize = true;
+            this.AgeLabel.Location = new System.Drawing.Point(13, 235);
+            this.AgeLabel.Name = "AgeLabel";
+            this.AgeLabel.Size = new System.Drawing.Size(26, 13);
+            this.AgeLabel.TabIndex = 8;
+            this.AgeLabel.Text = "Age";
             // 
             // InfoRankBox
             // 
@@ -158,14 +158,14 @@
             this.InfoRankBox.TabIndex = 9;
             this.InfoRankBox.TabStop = false;
             // 
-            // LabelInfoRank
+            // RankLabel
             // 
-            this.LabelInfoRank.AutoSize = true;
-            this.LabelInfoRank.Location = new System.Drawing.Point(12, 304);
-            this.LabelInfoRank.Name = "LabelInfoRank";
-            this.LabelInfoRank.Size = new System.Drawing.Size(33, 13);
-            this.LabelInfoRank.TabIndex = 10;
-            this.LabelInfoRank.Text = "Rank";
+            this.RankLabel.AutoSize = true;
+            this.RankLabel.Location = new System.Drawing.Point(12, 304);
+            this.RankLabel.Name = "RankLabel";
+            this.RankLabel.Size = new System.Drawing.Size(33, 13);
+            this.RankLabel.TabIndex = 10;
+            this.RankLabel.Text = "Rank";
             // 
             // label1
             // 
@@ -291,14 +291,14 @@
             this.Controls.Add(this.ProductGrid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DepositComboBox);
-            this.Controls.Add(this.LabelInfoRank);
+            this.Controls.Add(this.RankLabel);
             this.Controls.Add(this.InfoRankBox);
-            this.Controls.Add(this.LabelInfoAge);
+            this.Controls.Add(this.AgeLabel);
             this.Controls.Add(this.InfoAgeBox);
-            this.Controls.Add(this.LabelInfoPassword);
+            this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.InfoPasswordBox);
-            this.Controls.Add(this.LabelInfoEmail);
-            this.Controls.Add(this.LabelInfoName);
+            this.Controls.Add(this.EmailLabel);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.InfoEmailBox);
             this.Controls.Add(this.InfoNameBox);
             this.Name = "ClientInfoForm";
@@ -315,14 +315,14 @@
 
         private System.Windows.Forms.TextBox InfoNameBox;
         private System.Windows.Forms.TextBox InfoEmailBox;
-        private System.Windows.Forms.Label LabelInfoName;
-        private System.Windows.Forms.Label LabelInfoEmail;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.TextBox InfoPasswordBox;
-        private System.Windows.Forms.Label LabelInfoPassword;
+        private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.TextBox InfoAgeBox;
-        private System.Windows.Forms.Label LabelInfoAge;
+        private System.Windows.Forms.Label AgeLabel;
         private System.Windows.Forms.TextBox InfoRankBox;
-        private System.Windows.Forms.Label LabelInfoRank;
+        private System.Windows.Forms.Label RankLabel;
         private System.Windows.Forms.BindingSource depositBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView ProductGrid;
