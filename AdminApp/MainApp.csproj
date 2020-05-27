@@ -56,11 +56,11 @@
     <Compile Include="ClientInfoForm.Designer.cs">
       <DependentUpon>ClientInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdmForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdmForm.Designer.cs">
-      <DependentUpon>AdmForm.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
@@ -73,8 +73,8 @@
     <EmbeddedResource Include="ClientInfoForm.resx">
       <DependentUpon>ClientInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdmForm.resx">
-      <DependentUpon>AdmForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>

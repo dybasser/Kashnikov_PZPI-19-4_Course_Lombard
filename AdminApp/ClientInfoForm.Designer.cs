@@ -56,6 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BuyOut = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -295,11 +296,22 @@
             this.BuyOut.UseVisualStyleBackColor = true;
             this.BuyOut.Click += new System.EventHandler(this.BuyOut_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(156, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ClientInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BuyOut);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -320,6 +332,7 @@
             this.Controls.Add(this.InfoNameBox);
             this.Name = "ClientInfoForm";
             this.Text = "ClientInfoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientInfoForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
@@ -357,5 +370,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Image;
+        private System.Windows.Forms.Button button1;
     }
 }

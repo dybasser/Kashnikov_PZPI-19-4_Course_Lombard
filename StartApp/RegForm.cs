@@ -28,7 +28,8 @@ namespace StartApp
                 Name = NameBox.Text,
                 Email = EmailBox.Text,
                 Age = Convert.ToInt32(AgeBox.Text),
-                Password = PasswordBox.Text
+                Password = PasswordBox.Text,
+                Rank = 0
             });
             this.Close();
         }

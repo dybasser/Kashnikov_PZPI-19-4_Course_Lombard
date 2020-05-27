@@ -9,7 +9,7 @@ namespace LibraryPawnShop.Models
     [Serializable]
     public class Client : User
     {
-        public int Id { set; get; }
+        public int Rank { set; get; }
         public string Email { set; get; }
         public int Age { set; get; }
     }

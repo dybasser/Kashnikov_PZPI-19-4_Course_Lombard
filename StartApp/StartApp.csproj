@@ -89,13 +89,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdminApp\AdminApp.csproj">
+    <ProjectReference Include="..\AdminApp\MainApp.csproj">
       <Project>{70eea39f-0164-4c59-aecd-481f273c8231}</Project>
-      <Name>AdminApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ClientApp\ClientApp.csproj">
-      <Project>{fb174ece-f0d4-43de-98a5-809482d776d1}</Project>
-      <Name>ClientApp</Name>
+      <Name>MainApp</Name>
     </ProjectReference>
     <ProjectReference Include="..\LibraryPawnShop\LibraryPawnShop.csproj">
       <Project>{db467d14-2617-4e6c-b8ff-4aaef6c20b78}</Project>

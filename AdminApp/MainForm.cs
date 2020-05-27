@@ -12,11 +12,12 @@ using System.Windows.Forms;
 
 namespace AdminApp
 {
-    public partial class AdmForm : Form
+    public partial class MainForm : Form
     {
         PawnShop Shop;
+        
 
-        public AdmForm(PawnShop shop)
+        public MainForm(PawnShop shop)
         {
             InitializeComponent();
             Shop = shop;
@@ -47,18 +48,22 @@ namespace AdminApp
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //есть ли изменённые данные
-            var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
-            switch (res)
+            if (Shop.IsDirty != true)
             {
-                case DialogResult.Cancel:
-                    e.Cancel = true;
-                    break;
-                case DialogResult.Yes:
-                    Shop.Save();
-                    break;
-                case DialogResult.No:
-                    break;
+                var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
+                switch (res)
+                {
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                    case DialogResult.Yes:
+                        Shop.Save();
+                        Application.OpenForms[0].Close();
+                        break;
+                    case DialogResult.No:
+                        Application.OpenForms[0].Close();
+                        break;
+                }
             }
         }
 
@@ -78,11 +83,6 @@ namespace AdminApp
             //productBindingSource.ResetBindings(false);
         }
 
-        private void productList_DoubleClick(object sender, EventArgs e)
-        {
-            MessageBox.Show("Vsem hai");
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             int n = Shop.ForSale.Count;
@@ -92,11 +92,6 @@ namespace AdminApp
                 DepositBindingSource.ResetBindings(true);
                 ForSaleBindingSource.ResetBindings(true);
             }
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -131,7 +126,7 @@ namespace AdminApp
             {
                 Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[0].Value);
                 ClientInfoForm clientInfoForm = new ClientInfoForm(client, Shop);
-                clientInfoForm.Show();
+                clientInfoForm.ShowDialog();
             }
             catch
             {
@@ -148,10 +143,6 @@ namespace AdminApp
         private void ClientsGrid_ColumnDividerDoubleClick(object sender, DataGridViewColumnDividerDoubleClickEventArgs e)
         {
             //MessageBox.Show("right");
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
         }
     }
 }

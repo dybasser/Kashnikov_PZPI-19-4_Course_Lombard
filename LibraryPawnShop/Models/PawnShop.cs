@@ -13,6 +13,7 @@ namespace LibraryPawnShop.Models
     [Serializable]
     public class PawnShop
     {
+        public bool IsDirty;
         public List<Deposit> Deposits { private set; get; }
         public List<Client> Clients { private set; get; }
         public List<Product> Products { private set; get; }
@@ -24,6 +25,7 @@ namespace LibraryPawnShop.Models
             Clients = new List<Client>();
             Products = new List<Product>();
             ForSale = new List<Product>();
+            IsDirty = false;
         }
 
         public void FillTestData(int n)
@@ -53,7 +55,7 @@ namespace LibraryPawnShop.Models
                 }
                 Client B = new Client()
                 {
-                    Id = rnd.Next(10, 100),
+                    Rank = 0,
                     Name = $"Client{i}",
                     Password = "123",
                     Age = rnd.Next(18, 60),
@@ -75,6 +77,7 @@ namespace LibraryPawnShop.Models
                     Deposits.RemoveAt(i);
                 }
             }
+            IsDirty = true;
         }
 
         public int IndOfDepByName(string name)
@@ -109,6 +112,7 @@ namespace LibraryPawnShop.Models
                     break;
                 }
             }
+            IsDirty = true;
         }
 
         public Client SearchClient(string name)
@@ -123,6 +127,7 @@ namespace LibraryPawnShop.Models
         public void Save()
         {
             new Dao(this).Save();
+            IsDirty = false;
         }
 
         public void Load()

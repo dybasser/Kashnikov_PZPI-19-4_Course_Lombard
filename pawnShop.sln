@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminApp", "AdminApp\AdminApp.csproj", "{70EEA39F-0164-4C59-AECD-481F273C8231}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainApp", "AdminApp\MainApp.csproj", "{70EEA39F-0164-4C59-AECD-481F273C8231}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnShopTest", "PawnShopTest\PawnShopTest.csproj", "{48B07CDB-FD1D-4D90-BADB-DBDE4938F66C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryPawnShop", "LibraryPawnShop\LibraryPawnShop.csproj", "{DB467D14-2617-4E6C-B8FF-4AAEF6C20B78}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApp", "ClientApp\ClientApp.csproj", "{FB174ECE-F0D4-43DE-98A5-809482D776D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartApp", "StartApp\StartApp.csproj", "{51442028-40EB-460A-9F1D-B05D1DD3179A}"
 EndProject
@@ -31,10 +29,6 @@ Global
 		{DB467D14-2617-4E6C-B8FF-4AAEF6C20B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB467D14-2617-4E6C-B8FF-4AAEF6C20B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB467D14-2617-4E6C-B8FF-4AAEF6C20B78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB174ECE-F0D4-43DE-98A5-809482D776D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB174ECE-F0D4-43DE-98A5-809482D776D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB174ECE-F0D4-43DE-98A5-809482D776D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB174ECE-F0D4-43DE-98A5-809482D776D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51442028-40EB-460A-9F1D-B05D1DD3179A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51442028-40EB-460A-9F1D-B05D1DD3179A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51442028-40EB-460A-9F1D-B05D1DD3179A}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -16,12 +16,14 @@ namespace AdminApp
         Client Client;
         PawnShop Shop;
         List<Deposit> Deposits;
+        bool IsClient;
 
-        public ClientInfoForm(Client client, PawnShop shop, bool IsClient = false)
+        public ClientInfoForm(Client client, PawnShop shop, bool isClient = false)
         {
             InitializeComponent();
             Client = client;
             Shop = shop;
+            IsClient = isClient;
             if (IsClient == false)
             {
                 InfoNameBox.Text = Client.Name;
@@ -29,19 +31,22 @@ namespace AdminApp
                 InfoEmailBox.Text = Client.Email;
                 InfoPasswordBox.Text = Client.Password;
                 DepComboBoxLabel.Text = "Deposits";
+                InfoRankBox.Text = Convert.ToString(Client.Rank);
             }
             else
             {
-                InfoNameBox.Visible = false;
-                InfoAgeBox.Visible = false;
-                InfoEmailBox.Visible = false;
-                InfoPasswordBox.Visible = false;
-                InfoRankBox.Visible = false;
-                AgeLabel.Visible = false;
-                NameLabel.Visible = false;
-                PasswordLabel.Visible = false;
-                EmailLabel.Visible = false;
-                RankLabel.Visible = false;
+                AgeLabel.Hide();
+                NameLabel.Hide();
+                PasswordLabel.Hide();
+                EmailLabel.Hide();
+                RankLabel.Hide();
+                foreach (TextBox tb in Controls.Cast<Control>().Where(x => x is TextBox).Select(x => x as TextBox))
+                    tb.Visible = false;
+                
+
+                DateTimeBox.Visible = true;
+                DateTimeBuyOutBox.Visible = true;
+
             }
             Deposits = Shop.FindDepositsByClient(Client);
             if (Deposits.Count != 0)
@@ -76,6 +81,32 @@ namespace AdminApp
                 Deposits = Shop.FindDepositsByClient(Client);
                 depositBindingSource.DataSource = Deposits;
                 //productBindingSource.ResetBindings(true);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ClientInfoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Shop.IsDirty != true)
+            {
+                var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
+                switch (res)
+                {
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                    case DialogResult.Yes:
+                        Shop.Save();
+                        Application.OpenForms[0].Close();
+                        break;
+                    case DialogResult.No:
+                        Application.OpenForms[0].Close();
+                        break;
+                }
             }
         }
     }

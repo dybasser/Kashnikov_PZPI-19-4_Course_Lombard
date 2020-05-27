@@ -1,6 +1,4 @@
-﻿using AdminApp;
-using ClientApp;
-using LibraryPawnShop.Models;
+﻿using LibraryPawnShop.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdminApp;
 
 namespace StartApp
 {
@@ -25,7 +24,8 @@ namespace StartApp
         {
             InitializeComponent();
             Shop = new PawnShop();
-            Shop.Load();
+            if (File.Exists("shop.bin"))
+                Shop.Load();
             //Shop.FillTestData(50);
             using (var rd = new StreamReader("pass.txt"))
             {
@@ -38,7 +38,7 @@ namespace StartApp
         {
             if (textBox1.Text == admlogin && textBox2.Text == admpassword)
             {
-                AdmForm adm = new AdmForm(Shop);
+                MainForm adm = new MainForm(Shop);
                 this.Visible = false;
                 adm.Show();
             }
