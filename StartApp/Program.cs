@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdminApp
+namespace StartApp
 {
     static class Program
     {
@@ -14,10 +14,9 @@ namespace AdminApp
         [STAThread]
         static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdmForm());
+            Application.Run(new LogForm());
         }
     }
 }

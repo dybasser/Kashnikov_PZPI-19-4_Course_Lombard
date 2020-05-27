@@ -12,24 +12,11 @@ using System.Windows.Forms;
 
 namespace AdminApp
 {
-    public partial class MainForm : Form
+    public partial class AdmForm : Form
     {
         PawnShop Shop;
-        LoginForm Pred;
 
-        public MainForm(LoginForm lg)
-        {
-            InitializeComponent();
-            Shop = new PawnShop();
-            //Shop.Load();
-            Shop.FillTestData(50);
-            Pred = lg;
-            ClientBindingSource.DataSource = Shop.Clients;
-            DepositBindingSource.DataSource = Shop.Deposits;
-            ForSaleBindingSource.DataSource = Shop.ForSale;
-        }
-
-        public MainForm()
+        public AdmForm()
         {
             InitializeComponent();
             Shop = new PawnShop();
@@ -62,21 +49,19 @@ namespace AdminApp
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // есть ли изменённые данные
-            //var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
-            //switch (res)
-            //{
-            //    case DialogResult.Cancel:
-            //        e.Cancel = true;
-            //        break;
-            //    case DialogResult.Yes:
-            //        Shop.Save();
-            //        Pred.Close();
-            //        break;
-            //    case DialogResult.No:
-            //        //Pred.Close();
-            //        break;
-            //}
+            //есть ли изменённые данные
+            var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
+            switch (res)
+            {
+                case DialogResult.Cancel:
+                    e.Cancel = true;
+                    break;
+                case DialogResult.Yes:
+                    Shop.Save();
+                    break;
+                case DialogResult.No:
+                    break;
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +142,10 @@ namespace AdminApp
         private void ClientsGrid_ColumnDividerDoubleClick(object sender, DataGridViewColumnDividerDoubleClickEventArgs e)
         {
             //MessageBox.Show("right");
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
         }
     }
 }

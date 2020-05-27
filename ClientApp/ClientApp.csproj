@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{70EEA39F-0164-4C59-AECD-481F273C8231}</ProjectGuid>
+    <ProjectGuid>{FB174ECE-F0D4-43DE-98A5-809482D776D1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AdminApp</RootNamespace>
-    <AssemblyName>AdminApp</AssemblyName>
+    <RootNamespace>ClientApp</RootNamespace>
+    <AssemblyName>ClientApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,13 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,34 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientInfoForm.cs">
+    <Compile Include="ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientInfoForm.Designer.cs">
-      <DependentUpon>ClientInfoForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdmForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdmForm.Designer.cs">
-      <DependentUpon>AdmForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductForm.Designer.cs">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <Compile Include="ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ClientInfoForm.resx">
-      <DependentUpon>ClientInfoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdmForm.resx">
-      <DependentUpon>AdmForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProductForm.resx">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,10 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\LibraryPawnShop.Models.Client.datasource" />
-    <None Include="Properties\DataSources\LibraryPawnShop.Models.Deposit.datasource" />
-    <None Include="Properties\DataSources\LibraryPawnShop.Models.Product.datasource" />
-    <None Include="Properties\DataSources\pawnShop.Models.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LibraryPawnShop\LibraryPawnShop.csproj">
-      <Project>{db467d14-2617-4e6c-b8ff-4aaef6c20b78}</Project>
-      <Name>LibraryPawnShop</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
