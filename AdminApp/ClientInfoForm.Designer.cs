@@ -41,7 +41,7 @@
             this.AgeLabel = new System.Windows.Forms.Label();
             this.InfoRankBox = new System.Windows.Forms.TextBox();
             this.RankLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.DepComboBoxLabel = new System.Windows.Forms.Label();
             this.ProductGrid = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +54,7 @@
             this.DateTimeBuyOutBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.BuyOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             // DepositComboBox
             // 
+            this.DepositComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.depositBindingSource, "Name", true));
             this.DepositComboBox.DataSource = this.depositBindingSource;
             this.DepositComboBox.DisplayMember = "Name";
             this.DepositComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -70,6 +72,7 @@
             this.DepositComboBox.Size = new System.Drawing.Size(196, 21);
             this.DepositComboBox.TabIndex = 11;
             this.DepositComboBox.ValueMember = "Name";
+            this.DepositComboBox.SelectedIndexChanged += new System.EventHandler(this.DepositComboBox_SelectedIndexChanged);
             this.DepositComboBox.SelectionChangeCommitted += new System.EventHandler(this.DepositComboBox_SelectionChangeCommitted);
             // 
             // depositBindingSource
@@ -167,14 +170,14 @@
             this.RankLabel.TabIndex = 10;
             this.RankLabel.Text = "Rank";
             // 
-            // label1
+            // DepComboBoxLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(474, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Your deposits";
+            this.DepComboBoxLabel.AutoSize = true;
+            this.DepComboBoxLabel.Location = new System.Drawing.Point(474, 34);
+            this.DepComboBoxLabel.Name = "DepComboBoxLabel";
+            this.DepComboBoxLabel.Size = new System.Drawing.Size(71, 13);
+            this.DepComboBoxLabel.TabIndex = 12;
+            this.DepComboBoxLabel.Text = "Your deposits";
             // 
             // ProductGrid
             // 
@@ -279,17 +282,28 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "DateTimeBuyOut";
             // 
+            // BuyOut
+            // 
+            this.BuyOut.Location = new System.Drawing.Point(371, 53);
+            this.BuyOut.Name = "BuyOut";
+            this.BuyOut.Size = new System.Drawing.Size(75, 23);
+            this.BuyOut.TabIndex = 18;
+            this.BuyOut.Text = "BuyOut";
+            this.BuyOut.UseVisualStyleBackColor = true;
+            this.BuyOut.Click += new System.EventHandler(this.BuyOut_Click);
+            // 
             // ClientInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 450);
+            this.Controls.Add(this.BuyOut);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DateTimeBuyOutBox);
             this.Controls.Add(this.DateTimeBox);
             this.Controls.Add(this.ProductGrid);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DepComboBoxLabel);
             this.Controls.Add(this.DepositComboBox);
             this.Controls.Add(this.RankLabel);
             this.Controls.Add(this.InfoRankBox);
@@ -324,7 +338,7 @@
         private System.Windows.Forms.TextBox InfoRankBox;
         private System.Windows.Forms.Label RankLabel;
         private System.Windows.Forms.BindingSource depositBindingSource;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label DepComboBoxLabel;
         private System.Windows.Forms.DataGridView ProductGrid;
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -338,5 +352,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox DepositComboBox;
+        private System.Windows.Forms.Button BuyOut;
     }
 }

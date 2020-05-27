@@ -28,57 +28,6 @@ namespace LibraryPawnShop.Models
 
         public void FillTestData(int n)
         {
-            //var noImage = new Bitmap(Path.GetFullPath("image.png"));
-            //Random rnd = new Random();
-            //// Clients
-            //for (int i = 1; i <= n; ++i)
-            //{
-            //    Client A = new Client
-            //    {
-            //        Id = rnd.Next(10,100),
-            //        Name = $"Client{i}",
-            //        Password = "123",
-            //        Age = rnd.Next(18, 60),
-            //        Email = $"Client{i}@gmail.com"
-            //    };
-            //    Clients.Add(A);
-            //    var id = rnd.Next(1, 1000);
-            //    var weight = rnd.Next(1000, 5000);
-            //    Products.Add(new Product()
-            //    {
-            //        Id = id,
-            //        Name = $"Product{i}",
-            //        Price = i * 10,
-            //        Unit = "g",
-            //        Type = (i % 2 == 0) ? "gold" : "silver",
-            //        Weight = weight,
-            //        Sample = 999,
-            //        Image = noImage,
-            //        DateTime = DateTime.Now,
-            //        DateTimeBuyOut = DateTime.Now.AddSeconds(15),
-            //        Client = A
-            //    });
-            //}
-            // Products
-            //for (int i = 0; i < n; ++i)
-            //{
-            //    var id = rnd.Next(1, 1000);
-            //    var weight = rnd.Next(1000, 5000);
-            //    Products.Add(new Product()
-            //    {
-            //        Id = id,
-            //        Name = $"Product{i}",
-            //        Price = i * 10,
-            //        Unit = "g",
-            //        Type = (i % 2 == 0) ? "gold" : "silver",
-            //        Weight = weight,
-            //        Sample = 999,
-            //        Image = noImage,
-            //        DateTime = DateTime.Now,
-            //        DateTimeBuyOut = DateTime.Now.AddSeconds(15)
-            //    });
-            //}
-            // Deposits
             for (int i = 0; i < n; ++i)
             {
                 var noImage = new Bitmap(Path.GetFullPath("image.png"));
@@ -114,12 +63,6 @@ namespace LibraryPawnShop.Models
                 Deposits.Add(new Deposit(dep, B, DateTime.Now + TimeSpan.FromDays(i)));
                 Deposits[i].Name = $"Deposit{i}";
             }
-            // ForSale
-            //foreach (var dep in Deposits)
-            //{
-            //    if (dep.DateTime.Day % 2 == 0)
-            //        ForSales.Add(new ForSale(dep));
-            //}
         }
 
         public void DateCheck()
@@ -134,7 +77,19 @@ namespace LibraryPawnShop.Models
             }
         }
 
-        public List<Deposit> FindDeposits(Client client)
+        public int IndOfDepByName(string name)
+        {
+            for (int i = 0; i < Deposits.Count; ++i)
+            {
+                if (Deposits[i].Name == name)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public List<Deposit> FindDepositsByClient(Client client)
         {
             var deposits = new List<Deposit>();
             foreach (var dep in Deposits)
