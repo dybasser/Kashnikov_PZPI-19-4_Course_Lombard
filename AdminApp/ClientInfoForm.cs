@@ -83,7 +83,7 @@ namespace AdminApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ClientInfoForm_FormClosing(object sender, FormClosingEventArgs e)

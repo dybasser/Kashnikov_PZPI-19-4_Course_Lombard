@@ -58,10 +58,21 @@
             this.BuyOutButton = new System.Windows.Forms.Button();
             this.GetLoan = new System.Windows.Forms.Button();
             this.MainInfoBox = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weightDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sampleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.MainInfoBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // DepositComboBox
@@ -197,6 +208,7 @@
             this.ProductGrid.ReadOnly = true;
             this.ProductGrid.RowHeadersVisible = false;
             this.ProductGrid.RowTemplate.Height = 35;
+            this.ProductGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductGrid.Size = new System.Drawing.Size(323, 257);
             this.ProductGrid.TabIndex = 13;
             // 
@@ -300,7 +312,7 @@
             // 
             // GetLoan
             // 
-            this.GetLoan.Location = new System.Drawing.Point(422, 155);
+            this.GetLoan.Location = new System.Drawing.Point(13, 53);
             this.GetLoan.Name = "GetLoan";
             this.GetLoan.Size = new System.Drawing.Size(75, 23);
             this.GetLoan.TabIndex = 19;
@@ -320,18 +332,96 @@
             this.MainInfoBox.Controls.Add(this.AgeLabel);
             this.MainInfoBox.Controls.Add(this.InfoRankBox);
             this.MainInfoBox.Controls.Add(this.RankLabel);
-            this.MainInfoBox.Location = new System.Drawing.Point(12, 13);
+            this.MainInfoBox.Location = new System.Drawing.Point(652, 13);
             this.MainInfoBox.Name = "MainInfoBox";
             this.MainInfoBox.Size = new System.Drawing.Size(273, 425);
             this.MainInfoBox.TabIndex = 20;
             this.MainInfoBox.TabStop = false;
             this.MainInfoBox.Text = "MainInfo";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn1,
+            this.typeDataGridViewTextBoxColumn1,
+            this.priceDataGridViewTextBoxColumn1,
+            this.weightDataGridViewTextBoxColumn1,
+            this.unitDataGridViewTextBoxColumn1,
+            this.sampleDataGridViewTextBoxColumn1,
+            this.imageDataGridViewImageColumn});
+            this.dataGridView1.DataSource = this.productBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 181);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(271, 257);
+            this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.Visible = false;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataSource = typeof(LibraryPawnShop.Models.Product);
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn1
+            // 
+            this.typeDataGridViewTextBoxColumn1.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn1.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn1.Name = "typeDataGridViewTextBoxColumn1";
+            this.typeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // weightDataGridViewTextBoxColumn1
+            // 
+            this.weightDataGridViewTextBoxColumn1.DataPropertyName = "Weight";
+            this.weightDataGridViewTextBoxColumn1.HeaderText = "Weight";
+            this.weightDataGridViewTextBoxColumn1.Name = "weightDataGridViewTextBoxColumn1";
+            this.weightDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // unitDataGridViewTextBoxColumn1
+            // 
+            this.unitDataGridViewTextBoxColumn1.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn1.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn1.Name = "unitDataGridViewTextBoxColumn1";
+            this.unitDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // sampleDataGridViewTextBoxColumn1
+            // 
+            this.sampleDataGridViewTextBoxColumn1.DataPropertyName = "Sample";
+            this.sampleDataGridViewTextBoxColumn1.HeaderText = "Sample";
+            this.sampleDataGridViewTextBoxColumn1.Name = "sampleDataGridViewTextBoxColumn1";
+            this.sampleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.HeaderText = "Image";
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
+            // 
             // ClientInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.MainInfoBox);
             this.Controls.Add(this.GetLoan);
             this.Controls.Add(this.BuyOutButton);
@@ -350,6 +440,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.MainInfoBox.ResumeLayout(false);
             this.MainInfoBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,5 +478,14 @@
         private System.Windows.Forms.DataGridViewImageColumn Image;
         private System.Windows.Forms.Button GetLoan;
         private System.Windows.Forms.GroupBox MainInfoBox;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sampleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
+        private System.Windows.Forms.BindingSource productBindingSource1;
     }
 }
