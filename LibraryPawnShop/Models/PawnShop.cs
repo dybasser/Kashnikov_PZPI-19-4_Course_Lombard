@@ -115,11 +115,11 @@ namespace LibraryPawnShop.Models
             IsDirty = true;
         }
 
-        public Client SearchClient(string name)
+        public Client SearchClient(string email)
         {
             foreach (var cl in Clients)
             {
-                if (cl.Name == name) return cl;
+                if (cl.Email == email) return cl;
             }
             return null;
         }

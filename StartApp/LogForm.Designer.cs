@@ -28,28 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.PasswordBox = new System.Windows.Forms.TextBox();
             this.SignInButton = new System.Windows.Forms.Button();
             this.SingUpButton = new System.Windows.Forms.Button();
-            this.LoginLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // EmailBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 0;
+            this.EmailBox.BackColor = System.Drawing.SystemColors.Window;
+            this.EmailBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmailBox.Location = new System.Drawing.Point(12, 30);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(174, 20);
+            this.EmailBox.TabIndex = 0;
             // 
-            // textBox2
+            // PasswordBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.PasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PasswordBox.Location = new System.Drawing.Point(12, 83);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.Size = new System.Drawing.Size(174, 20);
+            this.PasswordBox.TabIndex = 1;
+            this.PasswordBox.UseSystemPasswordChar = true;
             // 
             // SignInButton
             // 
@@ -73,15 +76,15 @@
             this.SingUpButton.UseVisualStyleBackColor = true;
             this.SingUpButton.Click += new System.EventHandler(this.SingUpButton_Click);
             // 
-            // LoginLabel
+            // EmailLabel
             // 
-            this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginLabel.Location = new System.Drawing.Point(12, 11);
-            this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(38, 15);
-            this.LoginLabel.TabIndex = 4;
-            this.LoginLabel.Text = "Login";
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EmailLabel.Location = new System.Drawing.Point(12, 11);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(39, 15);
+            this.EmailLabel.TabIndex = 4;
+            this.EmailLabel.Text = "Email";
             // 
             // PasswordLabel
             // 
@@ -99,13 +102,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(198, 172);
             this.Controls.Add(this.PasswordLabel);
-            this.Controls.Add(this.LoginLabel);
+            this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.SingUpButton);
             this.Controls.Add(this.SignInButton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PasswordBox);
+            this.Controls.Add(this.EmailBox);
+            this.HelpButton = true;
+            this.MaximumSize = new System.Drawing.Size(214, 210);
+            this.MinimumSize = new System.Drawing.Size(214, 210);
             this.Name = "LogForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sign In";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,11 +120,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox EmailBox;
+        private System.Windows.Forms.TextBox PasswordBox;
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Button SingUpButton;
-        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label PasswordLabel;
     }
 }

@@ -32,21 +32,11 @@ namespace AdminApp
                 InfoPasswordBox.Text = Client.Password;
                 DepComboBoxLabel.Text = "Deposits";
                 InfoRankBox.Text = Convert.ToString(Client.Rank);
+                BuyOutButton.Hide();
             }
             else
             {
-                AgeLabel.Hide();
-                NameLabel.Hide();
-                PasswordLabel.Hide();
-                EmailLabel.Hide();
-                RankLabel.Hide();
-                foreach (TextBox tb in Controls.Cast<Control>().Where(x => x is TextBox).Select(x => x as TextBox))
-                    tb.Visible = false;
-                
-
-                DateTimeBox.Visible = true;
-                DateTimeBuyOutBox.Visible = true;
-
+                MainInfoBox.Hide();
             }
             Deposits = Shop.FindDepositsByClient(Client);
             if (Deposits.Count != 0)
@@ -55,8 +45,10 @@ namespace AdminApp
                 productBindingSource.DataSource = Deposits[0].Products;
                 DateTimeBox.Text = Deposits[0].DateTime.ToString();
                 DateTimeBuyOutBox.Text = Deposits[0].DateTimeBuyOut.ToString();
-                
+
             }
+            else
+                BuyOutButton.Enabled = false;
         }
 
         private void DepositComboBox_SelectionChangeCommitted(object sender, EventArgs e)
@@ -74,13 +66,18 @@ namespace AdminApp
 
         private void BuyOut_Click(object sender, EventArgs e)
         {
-            string name = DepositComboBox.Text;
-            if (DepositComboBox.Text != "")
+            var res = MessageBox.Show("Are you sure?", "", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
             {
-                Shop.Deposits.RemoveAt(Shop.IndOfDepByName(name));
-                Deposits = Shop.FindDepositsByClient(Client);
-                depositBindingSource.DataSource = Deposits;
-                //productBindingSource.ResetBindings(true);
+                string name = DepositComboBox.Text;
+                if (DepositComboBox.Text != "")
+                {
+                    Shop.Deposits.RemoveAt(Shop.IndOfDepByName(name));
+                    Deposits = Shop.FindDepositsByClient(Client);
+                    depositBindingSource.DataSource = Deposits;
+                    //productBindingSource.ResetBindings(true);
+                }
+                Shop.IsDirty = true;
             }
         }
 
@@ -91,7 +88,7 @@ namespace AdminApp
 
         private void ClientInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Shop.IsDirty != true)
+            if (Shop.IsDirty == true)
             {
                 var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
                 switch (res)
@@ -107,6 +104,10 @@ namespace AdminApp
                         Application.OpenForms[0].Close();
                         break;
                 }
+            }
+            else  
+            {
+                Application.OpenForms[0].Show();
             }
         }
     }

@@ -55,11 +55,13 @@
             this.DateTimeBuyOutBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.BuyOut = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BuyOutButton = new System.Windows.Forms.Button();
+            this.GetLoan = new System.Windows.Forms.Button();
+            this.MainInfoBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            this.MainInfoBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DepositComboBox
@@ -82,7 +84,7 @@
             // 
             // InfoNameBox
             // 
-            this.InfoNameBox.Location = new System.Drawing.Point(16, 53);
+            this.InfoNameBox.Location = new System.Drawing.Point(6, 40);
             this.InfoNameBox.Name = "InfoNameBox";
             this.InfoNameBox.ReadOnly = true;
             this.InfoNameBox.Size = new System.Drawing.Size(246, 20);
@@ -90,7 +92,7 @@
             // 
             // InfoEmailBox
             // 
-            this.InfoEmailBox.Location = new System.Drawing.Point(17, 116);
+            this.InfoEmailBox.Location = new System.Drawing.Point(6, 103);
             this.InfoEmailBox.Name = "InfoEmailBox";
             this.InfoEmailBox.ReadOnly = true;
             this.InfoEmailBox.Size = new System.Drawing.Size(245, 20);
@@ -99,7 +101,7 @@
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(14, 37);
+            this.NameLabel.Location = new System.Drawing.Point(6, 24);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(35, 13);
             this.NameLabel.TabIndex = 3;
@@ -108,7 +110,7 @@
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(14, 100);
+            this.EmailLabel.Location = new System.Drawing.Point(6, 87);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(32, 13);
             this.EmailLabel.TabIndex = 4;
@@ -117,7 +119,7 @@
             // InfoPasswordBox
             // 
             this.InfoPasswordBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.InfoPasswordBox.Location = new System.Drawing.Point(16, 181);
+            this.InfoPasswordBox.Location = new System.Drawing.Point(5, 168);
             this.InfoPasswordBox.Name = "InfoPasswordBox";
             this.InfoPasswordBox.ReadOnly = true;
             this.InfoPasswordBox.Size = new System.Drawing.Size(246, 20);
@@ -126,7 +128,7 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(13, 165);
+            this.PasswordLabel.Location = new System.Drawing.Point(6, 152);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 6;
@@ -134,7 +136,7 @@
             // 
             // InfoAgeBox
             // 
-            this.InfoAgeBox.Location = new System.Drawing.Point(16, 251);
+            this.InfoAgeBox.Location = new System.Drawing.Point(6, 240);
             this.InfoAgeBox.Name = "InfoAgeBox";
             this.InfoAgeBox.ReadOnly = true;
             this.InfoAgeBox.Size = new System.Drawing.Size(39, 20);
@@ -143,7 +145,7 @@
             // AgeLabel
             // 
             this.AgeLabel.AutoSize = true;
-            this.AgeLabel.Location = new System.Drawing.Point(14, 235);
+            this.AgeLabel.Location = new System.Drawing.Point(6, 224);
             this.AgeLabel.Name = "AgeLabel";
             this.AgeLabel.Size = new System.Drawing.Size(26, 13);
             this.AgeLabel.TabIndex = 8;
@@ -151,7 +153,7 @@
             // 
             // InfoRankBox
             // 
-            this.InfoRankBox.Location = new System.Drawing.Point(16, 320);
+            this.InfoRankBox.Location = new System.Drawing.Point(6, 296);
             this.InfoRankBox.Name = "InfoRankBox";
             this.InfoRankBox.ReadOnly = true;
             this.InfoRankBox.Size = new System.Drawing.Size(39, 20);
@@ -160,7 +162,7 @@
             // RankLabel
             // 
             this.RankLabel.AutoSize = true;
-            this.RankLabel.Location = new System.Drawing.Point(14, 304);
+            this.RankLabel.Location = new System.Drawing.Point(6, 280);
             this.RankLabel.Name = "RankLabel";
             this.RankLabel.Size = new System.Drawing.Size(33, 13);
             this.RankLabel.TabIndex = 10;
@@ -286,33 +288,53 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "DateTimeBuyOut";
             // 
-            // BuyOut
+            // BuyOutButton
             // 
-            this.BuyOut.Location = new System.Drawing.Point(371, 53);
-            this.BuyOut.Name = "BuyOut";
-            this.BuyOut.Size = new System.Drawing.Size(75, 23);
-            this.BuyOut.TabIndex = 18;
-            this.BuyOut.Text = "BuyOut";
-            this.BuyOut.UseVisualStyleBackColor = true;
-            this.BuyOut.Click += new System.EventHandler(this.BuyOut_Click);
+            this.BuyOutButton.Location = new System.Drawing.Point(371, 53);
+            this.BuyOutButton.Name = "BuyOutButton";
+            this.BuyOutButton.Size = new System.Drawing.Size(75, 23);
+            this.BuyOutButton.TabIndex = 18;
+            this.BuyOutButton.Text = "BuyOut";
+            this.BuyOutButton.UseVisualStyleBackColor = true;
+            this.BuyOutButton.Click += new System.EventHandler(this.BuyOut_Click);
             // 
-            // button1
+            // GetLoan
             // 
-            this.button1.Location = new System.Drawing.Point(156, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.GetLoan.Location = new System.Drawing.Point(422, 155);
+            this.GetLoan.Name = "GetLoan";
+            this.GetLoan.Size = new System.Drawing.Size(75, 23);
+            this.GetLoan.TabIndex = 19;
+            this.GetLoan.Text = "Get a loan";
+            this.GetLoan.UseVisualStyleBackColor = true;
+            this.GetLoan.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MainInfoBox
+            // 
+            this.MainInfoBox.Controls.Add(this.InfoNameBox);
+            this.MainInfoBox.Controls.Add(this.NameLabel);
+            this.MainInfoBox.Controls.Add(this.InfoEmailBox);
+            this.MainInfoBox.Controls.Add(this.EmailLabel);
+            this.MainInfoBox.Controls.Add(this.InfoPasswordBox);
+            this.MainInfoBox.Controls.Add(this.PasswordLabel);
+            this.MainInfoBox.Controls.Add(this.InfoAgeBox);
+            this.MainInfoBox.Controls.Add(this.AgeLabel);
+            this.MainInfoBox.Controls.Add(this.InfoRankBox);
+            this.MainInfoBox.Controls.Add(this.RankLabel);
+            this.MainInfoBox.Location = new System.Drawing.Point(12, 13);
+            this.MainInfoBox.Name = "MainInfoBox";
+            this.MainInfoBox.Size = new System.Drawing.Size(273, 425);
+            this.MainInfoBox.TabIndex = 20;
+            this.MainInfoBox.TabStop = false;
+            this.MainInfoBox.Text = "MainInfo";
             // 
             // ClientInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.BuyOut);
+            this.Controls.Add(this.MainInfoBox);
+            this.Controls.Add(this.GetLoan);
+            this.Controls.Add(this.BuyOutButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DateTimeBuyOutBox);
@@ -320,22 +342,14 @@
             this.Controls.Add(this.ProductGrid);
             this.Controls.Add(this.DepComboBoxLabel);
             this.Controls.Add(this.DepositComboBox);
-            this.Controls.Add(this.RankLabel);
-            this.Controls.Add(this.InfoRankBox);
-            this.Controls.Add(this.AgeLabel);
-            this.Controls.Add(this.InfoAgeBox);
-            this.Controls.Add(this.PasswordLabel);
-            this.Controls.Add(this.InfoPasswordBox);
-            this.Controls.Add(this.EmailLabel);
-            this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.InfoEmailBox);
-            this.Controls.Add(this.InfoNameBox);
             this.Name = "ClientInfoForm";
             this.Text = "ClientInfoForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientInfoForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            this.MainInfoBox.ResumeLayout(false);
+            this.MainInfoBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +376,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox DepositComboBox;
-        private System.Windows.Forms.Button BuyOut;
+        private System.Windows.Forms.Button BuyOutButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sampleDataGridViewTextBoxColumn;
@@ -370,6 +384,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Image;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button GetLoan;
+        private System.Windows.Forms.GroupBox MainInfoBox;
     }
 }

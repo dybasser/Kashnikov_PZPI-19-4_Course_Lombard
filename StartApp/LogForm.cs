@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminApp;
+using System.Net.Mail;
 
 namespace StartApp
 {
@@ -36,25 +37,32 @@ namespace StartApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == admlogin && textBox2.Text == admpassword)
+            if (EmailBox.Text == admlogin && PasswordBox.Text == admpassword)
             {
                 MainForm adm = new MainForm(Shop);
-                this.Visible = false;
+                Hide();
+                EmailBox.Text = "";
+                PasswordBox.Text = "";
                 adm.Show();
             }
             else
             {
-                string login = textBox1.Text;
-                string password = textBox2.Text;
-                Client client = Shop.SearchClient(login);
+                string email = EmailBox.Text;
+                string password = PasswordBox.Text;
+                Client client = Shop.SearchClient(email);
                 if (client != null && client.Password == password)
                 {
                     ClientInfoForm clientF = new ClientInfoForm(client, Shop, true);
-                    this.Visible = false;
+                    Hide();
+                    EmailBox.Text = "";
+                    PasswordBox.Text = "";
                     clientF.Show();
                 }
                 else
+                {
                     MessageBox.Show("Wrong");
+                }
+                    
             }
         }
 

@@ -48,7 +48,7 @@ namespace AdminApp
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Shop.IsDirty != true)
+            if (Shop.IsDirty == true)
             {
                 var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
                 switch (res)
@@ -64,6 +64,11 @@ namespace AdminApp
                         Application.OpenForms[0].Close();
                         break;
                 }
+            }
+            else
+            {
+                //this.Close();
+                Application.OpenForms[0].Show();
             }
         }
 

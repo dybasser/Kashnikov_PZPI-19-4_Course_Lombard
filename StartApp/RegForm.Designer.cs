@@ -48,7 +48,7 @@
             // 
             // EmailBox
             // 
-            this.EmailBox.Location = new System.Drawing.Point(13, 85);
+            this.EmailBox.Location = new System.Drawing.Point(12, 85);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(100, 20);
             this.EmailBox.TabIndex = 1;
