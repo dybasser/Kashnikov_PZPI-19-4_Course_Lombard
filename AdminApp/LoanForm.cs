@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryPawnShop.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace AdminApp
 {
     public partial class LoanForm : Form
     {
-        public LoanForm()
+        List<Product> Products;
+
+        public LoanForm(List<Product> products)
         {
             InitializeComponent();
+            Products = products;
+           
         }
     }
 }

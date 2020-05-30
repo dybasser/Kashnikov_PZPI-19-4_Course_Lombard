@@ -32,7 +32,7 @@ namespace LibraryPawnShop.Models
         {
             for (int i = 0; i < n; ++i)
             {
-                var noImage = new Bitmap(Path.GetFullPath("image.png"));
+                //var noImage = new Bitmap(Path.GetFullPath("image.png"));
                 var rnd = new Random();
                 var dep = new List<Product>();
                 for (int j = 0; j < 3; ++j)
@@ -47,8 +47,8 @@ namespace LibraryPawnShop.Models
                         Unit = "g",
                         Type = (j % 2 == 0) ? "gold" : "silver",
                         Weight = weight,
-                        Sample = 999,
-                        Image = noImage
+                        Sample = 999//,
+                        //Image = noImage
                     };
                     Products.Add(A);
                     dep.Add(A);

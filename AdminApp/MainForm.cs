@@ -67,7 +67,6 @@ namespace AdminApp
             }
             else
             {
-                //this.Close();
                 Application.OpenForms[0].Show();
             }
         }

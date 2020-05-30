@@ -25,9 +25,9 @@ namespace StartApp
         {
             InitializeComponent();
             Shop = new PawnShop();
-            if (File.Exists("shop.bin"))
-                Shop.Load();
-            //Shop.FillTestData(50);
+            //if (File.Exists("shop.bin"))
+               // Shop.Load();
+            Shop.FillTestData(50);
             using (var rd = new StreamReader("pass.txt"))
             {
                 admlogin = rd.ReadLine();

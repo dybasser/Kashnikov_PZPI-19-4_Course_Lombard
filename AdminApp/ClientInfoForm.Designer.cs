@@ -59,7 +59,6 @@
             this.GetLoan = new System.Windows.Forms.Button();
             this.MainInfoBox = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +66,8 @@
             this.unitDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sampleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -312,7 +313,7 @@
             // 
             // GetLoan
             // 
-            this.GetLoan.Location = new System.Drawing.Point(13, 53);
+            this.GetLoan.Location = new System.Drawing.Point(13, 50);
             this.GetLoan.Name = "GetLoan";
             this.GetLoan.Size = new System.Drawing.Size(75, 23);
             this.GetLoan.TabIndex = 19;
@@ -332,7 +333,7 @@
             this.MainInfoBox.Controls.Add(this.AgeLabel);
             this.MainInfoBox.Controls.Add(this.InfoRankBox);
             this.MainInfoBox.Controls.Add(this.RankLabel);
-            this.MainInfoBox.Location = new System.Drawing.Point(652, 13);
+            this.MainInfoBox.Location = new System.Drawing.Point(13, 13);
             this.MainInfoBox.Name = "MainInfoBox";
             this.MainInfoBox.Size = new System.Drawing.Size(273, 425);
             this.MainInfoBox.TabIndex = 20;
@@ -362,10 +363,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(271, 257);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.Visible = false;
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataSource = typeof(LibraryPawnShop.Models.Product);
             // 
             // nameDataGridViewTextBoxColumn1
             // 
@@ -415,6 +412,10 @@
             this.imageDataGridViewImageColumn.HeaderText = "Image";
             this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
             this.imageDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataSource = typeof(LibraryPawnShop.Models.Product);
             // 
             // ClientInfoForm
             // 
@@ -487,5 +488,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sampleDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.BindingSource productBindingSource1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

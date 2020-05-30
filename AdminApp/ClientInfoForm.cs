@@ -16,6 +16,7 @@ namespace AdminApp
         Client Client;
         PawnShop Shop;
         List<Deposit> Deposits;
+        List<Product> Products;
         bool IsClient;
 
         public ClientInfoForm(Client client, PawnShop shop, bool isClient = false)
@@ -24,6 +25,7 @@ namespace AdminApp
             Client = client;
             Shop = shop;
             IsClient = isClient;
+            productBindingSource1.DataSource = Products;
             if (IsClient == false)
             {
                 InfoNameBox.Text = Client.Name;
@@ -83,7 +85,11 @@ namespace AdminApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            LoanForm loan = new LoanForm(Products);
+            if (loan.ShowDialog() == DialogResult.OK)
+            {
+                productBindingSource1.ResetBindings(true);
+            }
         }
 
         private void ClientInfoForm_FormClosing(object sender, FormClosingEventArgs e)

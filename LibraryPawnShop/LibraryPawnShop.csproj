@@ -47,7 +47,6 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Deposit.cs" />
-    <Compile Include="Models\ForSale.cs" />
     <Compile Include="Models\PawnShop.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />

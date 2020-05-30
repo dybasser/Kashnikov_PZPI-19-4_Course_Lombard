@@ -11,33 +11,33 @@ namespace LibraryPawnShop.DAL
 {
     public class Dao
     {
-        PawnShop shop;
+        PawnShop Shop;
         const string filePath = "shop.bin";
 
         public Dao(PawnShop shop)
         {
-            this.shop = shop;
+            Shop = shop;
         }
 
         public void Save()
         {
-            using (Stream stream = File.Create(filePath))
+            using (Stream stream = File.Create("shop.bin"))
             {
                 var serializer = new BinaryFormatter();
-                serializer.Serialize(stream, shop);
+                serializer.Serialize(stream, Shop);
             }
         }
 
         public void Load()
         {
-            using (Stream stream = File.OpenRead(filePath))
+            using (Stream stream = File.OpenRead("shop.bin"))
             {
                 var serializer = new BinaryFormatter();
                 PawnShop sh = (PawnShop)serializer.Deserialize(stream);
-                Copy(sh.Products, shop.Products);
-                Copy(sh.Clients, shop.Clients);
-                Copy(sh.Deposits, shop.Deposits);
-                Copy(sh.ForSale, shop.ForSale);
+                Copy(sh.Products, Shop.Products);
+                Copy(sh.Clients, Shop.Clients);
+                Copy(sh.Deposits, Shop.Deposits);
+                Copy(sh.ForSale, Shop.ForSale);
             }
         }
         private void Copy<T>(List<T> from, List<T> to)
