@@ -16,6 +16,8 @@ namespace StartApp
 {
     public partial class LogForm : Form
     {
+        const string adminPass = "pass.txt";
+
         string admlogin;
         string admpassword;
 
@@ -25,10 +27,10 @@ namespace StartApp
         {
             InitializeComponent();
             Shop = new PawnShop();
-            //if (File.Exists("shop.bin"))
-               // Shop.Load();
-            Shop.FillTestData(50);
-            using (var rd = new StreamReader("pass.txt"))
+            if (File.Exists("shop.bin"))
+                Shop.Load();
+            //Shop.FillTestData(100);
+            using (var rd = new StreamReader(adminPass))
             {
                 admlogin = rd.ReadLine();
                 admpassword = rd.ReadLine();

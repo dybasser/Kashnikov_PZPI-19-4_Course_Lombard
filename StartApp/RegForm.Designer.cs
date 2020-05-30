@@ -48,21 +48,21 @@
             // 
             // EmailBox
             // 
-            this.EmailBox.Location = new System.Drawing.Point(12, 85);
+            this.EmailBox.Location = new System.Drawing.Point(162, 27);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(100, 20);
             this.EmailBox.TabIndex = 1;
             // 
             // AgeBox
             // 
-            this.AgeBox.Location = new System.Drawing.Point(13, 156);
+            this.AgeBox.Location = new System.Drawing.Point(15, 80);
             this.AgeBox.Name = "AgeBox";
             this.AgeBox.Size = new System.Drawing.Size(100, 20);
             this.AgeBox.TabIndex = 2;
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(13, 218);
+            this.PasswordBox.Location = new System.Drawing.Point(162, 80);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(100, 20);
             this.PasswordBox.TabIndex = 3;
@@ -80,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Location = new System.Drawing.Point(159, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
@@ -89,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 140);
+            this.label3.Location = new System.Drawing.Point(12, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 6;
@@ -98,7 +98,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 202);
+            this.label4.Location = new System.Drawing.Point(159, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 7;
@@ -107,9 +107,9 @@
             // RegButton
             // 
             this.RegButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.RegButton.Location = new System.Drawing.Point(174, 258);
+            this.RegButton.Location = new System.Drawing.Point(13, 333);
             this.RegButton.Name = "RegButton";
-            this.RegButton.Size = new System.Drawing.Size(298, 84);
+            this.RegButton.Size = new System.Drawing.Size(119, 34);
             this.RegButton.TabIndex = 8;
             this.RegButton.Text = "Sign Up";
             this.RegButton.UseVisualStyleBackColor = true;

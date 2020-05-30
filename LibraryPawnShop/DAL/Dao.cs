@@ -21,7 +21,7 @@ namespace LibraryPawnShop.DAL
 
         public void Save()
         {
-            using (Stream stream = File.Create("shop.bin"))
+            using (Stream stream = File.Create(filePath))
             {
                 var serializer = new BinaryFormatter();
                 serializer.Serialize(stream, Shop);
@@ -30,7 +30,7 @@ namespace LibraryPawnShop.DAL
 
         public void Load()
         {
-            using (Stream stream = File.OpenRead("shop.bin"))
+            using (Stream stream = File.OpenRead(filePath))
             {
                 var serializer = new BinaryFormatter();
                 PawnShop sh = (PawnShop)serializer.Deserialize(stream);

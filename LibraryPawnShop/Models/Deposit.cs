@@ -11,7 +11,8 @@ namespace LibraryPawnShop.Models
     {
         public Deposit(List<Product> products, Client client, DateTime? t = null)
         {
-            Products = products;
+            Products = new List<Product>();
+            Products.AddRange(products);
             Client = client;
             if (t == null)
                 DateTime = DateTime.Now;

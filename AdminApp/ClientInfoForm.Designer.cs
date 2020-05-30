@@ -47,7 +47,6 @@
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sampleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Image = new System.Windows.Forms.DataGridViewImageColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -56,29 +55,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BuyOutButton = new System.Windows.Forms.Button();
-            this.GetLoan = new System.Windows.Forms.Button();
+            this.AddProduct = new System.Windows.Forms.Button();
             this.MainInfoBox = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CurrentDeposit = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weightDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sampleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.GetLoan = new System.Windows.Forms.Button();
+            this.DepositName = new System.Windows.Forms.TextBox();
+            this.LoanBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.MainInfoBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurrentDeposit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            this.LoanBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DepositComboBox
             // 
-            this.DepositComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.depositBindingSource, "Name", true));
             this.DepositComboBox.DataSource = this.depositBindingSource;
             this.DepositComboBox.DisplayMember = "Name";
             this.DepositComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -185,9 +186,9 @@
             this.DepComboBoxLabel.AutoSize = true;
             this.DepComboBoxLabel.Location = new System.Drawing.Point(474, 34);
             this.DepComboBoxLabel.Name = "DepComboBoxLabel";
-            this.DepComboBoxLabel.Size = new System.Drawing.Size(71, 13);
+            this.DepComboBoxLabel.Size = new System.Drawing.Size(48, 13);
             this.DepComboBoxLabel.TabIndex = 12;
-            this.DepComboBoxLabel.Text = "Your deposits";
+            this.DepComboBoxLabel.Text = "Deposits";
             // 
             // ProductGrid
             // 
@@ -200,7 +201,6 @@
             this.typeDataGridViewTextBoxColumn,
             this.sampleDataGridViewTextBoxColumn,
             this.weightDataGridViewTextBoxColumn,
-            this.unitDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.Image});
             this.ProductGrid.DataSource = this.productBindingSource;
@@ -240,13 +240,6 @@
             this.weightDataGridViewTextBoxColumn.HeaderText = "Weight";
             this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
             this.weightDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // priceDataGridViewTextBoxColumn
             // 
@@ -311,15 +304,15 @@
             this.BuyOutButton.UseVisualStyleBackColor = true;
             this.BuyOutButton.Click += new System.EventHandler(this.BuyOut_Click);
             // 
-            // GetLoan
+            // AddProduct
             // 
-            this.GetLoan.Location = new System.Drawing.Point(13, 50);
-            this.GetLoan.Name = "GetLoan";
-            this.GetLoan.Size = new System.Drawing.Size(75, 23);
-            this.GetLoan.TabIndex = 19;
-            this.GetLoan.Text = "Get a loan";
-            this.GetLoan.UseVisualStyleBackColor = true;
-            this.GetLoan.Click += new System.EventHandler(this.button1_Click);
+            this.AddProduct.Location = new System.Drawing.Point(15, 22);
+            this.AddProduct.Name = "AddProduct";
+            this.AddProduct.Size = new System.Drawing.Size(75, 23);
+            this.AddProduct.TabIndex = 19;
+            this.AddProduct.Text = "Add product";
+            this.AddProduct.UseVisualStyleBackColor = true;
+            this.AddProduct.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainInfoBox
             // 
@@ -333,36 +326,35 @@
             this.MainInfoBox.Controls.Add(this.AgeLabel);
             this.MainInfoBox.Controls.Add(this.InfoRankBox);
             this.MainInfoBox.Controls.Add(this.RankLabel);
-            this.MainInfoBox.Location = new System.Drawing.Point(13, 13);
+            this.MainInfoBox.Location = new System.Drawing.Point(12, 13);
             this.MainInfoBox.Name = "MainInfoBox";
-            this.MainInfoBox.Size = new System.Drawing.Size(273, 425);
+            this.MainInfoBox.Size = new System.Drawing.Size(341, 425);
             this.MainInfoBox.TabIndex = 20;
             this.MainInfoBox.TabStop = false;
             this.MainInfoBox.Text = "MainInfo";
             // 
-            // dataGridView1
+            // CurrentDeposit
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CurrentDeposit.AllowUserToAddRows = false;
+            this.CurrentDeposit.AllowUserToDeleteRows = false;
+            this.CurrentDeposit.AutoGenerateColumns = false;
+            this.CurrentDeposit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CurrentDeposit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn1,
             this.typeDataGridViewTextBoxColumn1,
             this.priceDataGridViewTextBoxColumn1,
             this.weightDataGridViewTextBoxColumn1,
-            this.unitDataGridViewTextBoxColumn1,
             this.sampleDataGridViewTextBoxColumn1,
             this.imageDataGridViewImageColumn});
-            this.dataGridView1.DataSource = this.productBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 181);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(271, 257);
-            this.dataGridView1.TabIndex = 21;
-            this.dataGridView1.Visible = false;
+            this.CurrentDeposit.DataSource = this.productBindingSource1;
+            this.CurrentDeposit.Location = new System.Drawing.Point(15, 48);
+            this.CurrentDeposit.Name = "CurrentDeposit";
+            this.CurrentDeposit.ReadOnly = true;
+            this.CurrentDeposit.RowHeadersVisible = false;
+            this.CurrentDeposit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CurrentDeposit.Size = new System.Drawing.Size(271, 257);
+            this.CurrentDeposit.TabIndex = 21;
+            this.CurrentDeposit.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn1
             // 
@@ -392,13 +384,6 @@
             this.weightDataGridViewTextBoxColumn1.Name = "weightDataGridViewTextBoxColumn1";
             this.weightDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // unitDataGridViewTextBoxColumn1
-            // 
-            this.unitDataGridViewTextBoxColumn1.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn1.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn1.Name = "unitDataGridViewTextBoxColumn1";
-            this.unitDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // sampleDataGridViewTextBoxColumn1
             // 
             this.sampleDataGridViewTextBoxColumn1.DataPropertyName = "Sample";
@@ -417,14 +402,43 @@
             // 
             this.productBindingSource1.DataSource = typeof(LibraryPawnShop.Models.Product);
             // 
+            // GetLoan
+            // 
+            this.GetLoan.Location = new System.Drawing.Point(211, 338);
+            this.GetLoan.Name = "GetLoan";
+            this.GetLoan.Size = new System.Drawing.Size(75, 23);
+            this.GetLoan.TabIndex = 22;
+            this.GetLoan.Text = "Get a loan";
+            this.GetLoan.UseVisualStyleBackColor = true;
+            this.GetLoan.Click += new System.EventHandler(this.GetLoan_Click);
+            // 
+            // DepositName
+            // 
+            this.DepositName.Location = new System.Drawing.Point(15, 338);
+            this.DepositName.Name = "DepositName";
+            this.DepositName.Size = new System.Drawing.Size(100, 20);
+            this.DepositName.TabIndex = 23;
+            // 
+            // LoanBox
+            // 
+            this.LoanBox.Controls.Add(this.AddProduct);
+            this.LoanBox.Controls.Add(this.GetLoan);
+            this.LoanBox.Controls.Add(this.DepositName);
+            this.LoanBox.Controls.Add(this.CurrentDeposit);
+            this.LoanBox.Location = new System.Drawing.Point(6, 30);
+            this.LoanBox.Name = "LoanBox";
+            this.LoanBox.Size = new System.Drawing.Size(341, 426);
+            this.LoanBox.TabIndex = 24;
+            this.LoanBox.TabStop = false;
+            this.LoanBox.Text = "Deposit menu";
+            // 
             // ClientInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(706, 468);
+            this.Controls.Add(this.LoanBox);
             this.Controls.Add(this.MainInfoBox);
-            this.Controls.Add(this.GetLoan);
             this.Controls.Add(this.BuyOutButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -441,8 +455,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.MainInfoBox.ResumeLayout(false);
             this.MainInfoBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurrentDeposit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            this.LoanBox.ResumeLayout(false);
+            this.LoanBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,9 +493,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Image;
-        private System.Windows.Forms.Button GetLoan;
+        private System.Windows.Forms.Button AddProduct;
         private System.Windows.Forms.GroupBox MainInfoBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView CurrentDeposit;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
@@ -489,5 +505,8 @@
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.BindingSource productBindingSource1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button GetLoan;
+        private System.Windows.Forms.TextBox DepositName;
+        private System.Windows.Forms.GroupBox LoanBox;
     }
 }

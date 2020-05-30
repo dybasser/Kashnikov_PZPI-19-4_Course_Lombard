@@ -16,7 +16,7 @@ namespace AdminApp
         Client Client;
         PawnShop Shop;
         List<Deposit> Deposits;
-        List<Product> Products;
+        List<Product> Products = new List<Product>();
         bool IsClient;
 
         public ClientInfoForm(Client client, PawnShop shop, bool isClient = false)
@@ -32,13 +32,14 @@ namespace AdminApp
                 InfoAgeBox.Text = Convert.ToString(Client.Age);
                 InfoEmailBox.Text = Client.Email;
                 InfoPasswordBox.Text = Client.Password;
-                DepComboBoxLabel.Text = "Deposits";
                 InfoRankBox.Text = Convert.ToString(Client.Rank);
                 BuyOutButton.Hide();
+                LoanBox.Hide();
             }
             else
             {
                 MainInfoBox.Hide();
+                CurrentDeposit.Show();
             }
             Deposits = Shop.FindDepositsByClient(Client);
             if (Deposits.Count != 0)
@@ -59,11 +60,13 @@ namespace AdminApp
             {
                 if (dep.Name == DepositComboBox.Text)
                 {
+                    productBindingSource.ResetBindings(false);
                     productBindingSource.DataSource = dep.Products;
                     DateTimeBox.Text = dep.DateTime.ToString();
                     DateTimeBuyOutBox.Text = dep.DateTimeBuyOut.ToString();
                 }
             }
+
         }
 
         private void BuyOut_Click(object sender, EventArgs e)
@@ -77,10 +80,11 @@ namespace AdminApp
                     Shop.Deposits.RemoveAt(Shop.IndOfDepByName(name));
                     Deposits = Shop.FindDepositsByClient(Client);
                     depositBindingSource.DataSource = Deposits;
-                    //productBindingSource.ResetBindings(true);
+                    productBindingSource.DataSource = null;
                 }
                 Shop.IsDirty = true;
             }
+            if (Deposits.Count == 0) BuyOutButton.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,7 +92,7 @@ namespace AdminApp
             LoanForm loan = new LoanForm(Products);
             if (loan.ShowDialog() == DialogResult.OK)
             {
-                productBindingSource1.ResetBindings(true);
+                productBindingSource1.ResetBindings(false);
             }
         }
 
@@ -115,6 +119,29 @@ namespace AdminApp
             {
                 Application.OpenForms[0].Show();
             }
+        }
+
+        private void GetLoan_Click(object sender, EventArgs e)
+        {
+            if (Products.Count == 0)
+            {
+                MessageBox.Show("You must add at least one item!");
+                return;
+            }
+            else if (DepositName.Text == "")
+            {
+                MessageBox.Show("You must enter Deposit's name!");
+                return;
+            }
+            string name = DepositName.Text;
+            Deposit dep = new Deposit(Products, Client) { Name = name};
+            Shop.Deposits.Add(dep);
+            Products.Clear();
+            productBindingSource1.DataSource = null;
+            Deposits = Shop.FindDepositsByClient(Client);
+            depositBindingSource.DataSource = Deposits;
+            Shop.IsDirty = true;
+            BuyOutButton.Enabled = true;
         }
     }
 }
