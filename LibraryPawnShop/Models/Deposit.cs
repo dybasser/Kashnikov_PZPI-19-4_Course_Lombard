@@ -9,16 +9,25 @@ namespace LibraryPawnShop.Models
     [Serializable]
     public class Deposit
     {
-        public Deposit(List<Product> products, Client client, DateTime? t = null)
+        public Deposit(List<Product> products, Client client, DateTime? t = null, bool isTest = false)
         {
             Products = new List<Product>();
             Products.AddRange(products);
             Client = client;
-            if (t == null)
+            if (isTest == true)
+            {
+                Random rnd = new Random();
+                DateTimeBuyOut = DateTime.Now.AddSeconds(rnd.Next(1, 30));
                 DateTime = DateTime.Now;
+            }
             else
-                DateTime = (DateTime)t;
-            DateTimeBuyOut = DateTime.AddSeconds(10);
+            {
+                if (t == null)
+                    DateTime = DateTime.Now;
+                else
+                    DateTime = (DateTime)t;
+                DateTimeBuyOut = DateTime.AddDays(60);
+            }
             Price = 0;
             foreach (var pr in products)
                 Price += pr.Price;

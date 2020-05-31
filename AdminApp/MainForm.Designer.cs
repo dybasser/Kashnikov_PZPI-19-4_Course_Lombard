@@ -314,14 +314,16 @@
             // checkDatesToolStripMenuItem
             // 
             this.checkDatesToolStripMenuItem.Name = "checkDatesToolStripMenuItem";
-            this.checkDatesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.checkDatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkDatesToolStripMenuItem.Text = "Проверить даты";
+            this.checkDatesToolStripMenuItem.Click += new System.EventHandler(this.checkDatesToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Удалить";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // clientsToolStripMenuItem
             // 

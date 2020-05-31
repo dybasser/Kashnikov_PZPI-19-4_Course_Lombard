@@ -48,7 +48,7 @@ namespace LibraryPawnShop.Models
                     Product A = new Product()
                     {
                         Name = $"Product{j}",
-                        Price = i * 10,
+                        Price = (i+1) * 10,
                         Type = (j % 2 == 0) ? "золото" : "серебро",
                         Weight = weight,
                         Sample = 999,
@@ -59,14 +59,14 @@ namespace LibraryPawnShop.Models
                 }
                 Client B = new Client()
                 {
-                    Rank = 0,
+                    Rank = (i % 2 == 0) ? -6 : 7,
                     Name = $"Client{i}",
                     Password = "123",
                     Age = rnd.Next(18, 60),
                     Email = $"Client{i}@gmail.com"
                 };
                 Clients.Add(B);
-                Deposits.Add(new Deposit(dep, B, DateTime.Now + TimeSpan.FromDays(i)));
+                Deposits.Add(new Deposit(dep, B, DateTime.Now + TimeSpan.FromDays(i), true));
                 Deposits[i].Name = $"Deposit{i}";
             }
         }

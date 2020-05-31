@@ -169,5 +169,15 @@ namespace AdminApp
         {
             ReportButton.PerformClick();
         }
+
+        private void checkDatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateCheck.PerformClick();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete.PerformClick();
+        }
     }
 }
