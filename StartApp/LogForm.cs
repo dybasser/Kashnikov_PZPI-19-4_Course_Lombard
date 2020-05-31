@@ -16,10 +16,6 @@ namespace StartApp
 {
     public partial class LogForm : Form
     {
-        const string adminPass = "pass.txt";
-
-        string admlogin;
-        string admpassword;
 
         PawnShop Shop;
 
@@ -31,16 +27,11 @@ namespace StartApp
                 Shop.Load();
             else
                 Shop.FillTestData(100);
-            using (var rd = new StreamReader(adminPass))
-            {
-                admlogin = rd.ReadLine();
-                admpassword = rd.ReadLine();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (EmailBox.Text == admlogin && PasswordBox.Text == admpassword)
+            if (EmailBox.Text == Shop.Admin.Name && PasswordBox.Text == Shop.Admin.Password)
             {
                 MainForm adm = new MainForm(Shop);
                 Hide();

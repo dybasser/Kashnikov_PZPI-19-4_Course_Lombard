@@ -22,7 +22,7 @@ namespace AdminApp
             InitializeComponent();
             Shop = shop;
             ClientBindingSource.DataSource = Shop.Clients;
-            ForSaleBindingSource.DataSource = Shop.ForSale;
+            ForSaleBindingSource.DataSource = Shop.Warehouse;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,11 +52,12 @@ namespace AdminApp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            int n = Shop.ForSale.Count;
+            int n = Shop.Warehouse.Count;
             Shop.DateCheck();
-            if (Shop.ForSale.Count > n)
+            if (Shop.Warehouse.Count > n)
             {
                 ForSaleBindingSource.ResetBindings(false);
+                ClientBindingSource.ResetBindings(false);
             }
         }
 
@@ -70,7 +71,7 @@ namespace AdminApp
             try
             {
                 string item = (string)ForSaleGrid.SelectedRows[0].Cells[0].Value;
-                Shop.ForSaleDelete(item);
+                Shop.WarehouseDelete(item);
                 ForSaleBindingSource.ResetBindings(false);
             }
             catch

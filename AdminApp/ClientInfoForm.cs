@@ -132,26 +132,29 @@ namespace AdminApp
 
         private void ClientInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Shop.IsDirty == true)
+            if (IsClient == true)
             {
-                var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
-                switch (res)
+                if (Shop.IsDirty == true)
                 {
-                    case DialogResult.Cancel:
-                        e.Cancel = true;
-                        break;
-                    case DialogResult.Yes:
-                        Shop.Save();
-                        Application.OpenForms[0].Close();
-                        break;
-                    case DialogResult.No:
-                        Application.OpenForms[0].Close();
-                        break;
+                    var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
+                    switch (res)
+                    {
+                        case DialogResult.Cancel:
+                            e.Cancel = true;
+                            break;
+                        case DialogResult.Yes:
+                            Shop.Save();
+                            Application.OpenForms[0].Close();
+                            break;
+                        case DialogResult.No:
+                            Application.OpenForms[0].Close();
+                            break;
+                    }
                 }
-            }
-            else  
-            {
-                Application.OpenForms[0].Show();
+                else
+                {
+                    Application.OpenForms[0].Show();
+                }
             }
         }
 

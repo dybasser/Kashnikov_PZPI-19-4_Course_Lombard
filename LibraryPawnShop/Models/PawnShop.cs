@@ -21,16 +21,18 @@ namespace LibraryPawnShop.Models
         public List<Deposit> Deposits { private set; get; }
         public List<Client> Clients { private set; get; }
         public List<Product> Products { private set; get; }
-        public List<Product> ForSale { private set; get; }
+        public List<Product> Warehouse { private set; get; }
+        public Admin Admin;
 
         public PawnShop()
         {
             Deposits = new List<Deposit>();
             Clients = new List<Client>();
             Products = new List<Product>();
-            ForSale = new List<Product>();
+            Warehouse = new List<Product>();
             IsDirty = false;
             BannedUsers = new List<string>();
+            Admin = new Admin() { Name = "admin", Password = "12345" };
         }
 
         public void FillTestData(int n)
@@ -75,7 +77,8 @@ namespace LibraryPawnShop.Models
             {
                 if (DateTime.Now >= Deposits[i].DateTimeBuyOut)
                 {
-                    ForSale.AddRange(Deposits[i].Products);
+                    Warehouse.AddRange(Deposits[i].Products);
+                    Deposits[i].Client.Rank--;
                     Deposits.RemoveAt(i);
                 }
             }
@@ -104,13 +107,13 @@ namespace LibraryPawnShop.Models
             return deposits;
         }
 
-        public void ForSaleDelete(string name)
+        public void WarehouseDelete(string name)
         {
-            for (int i = 0; i < ForSale.Count; ++i)
+            for (int i = 0; i < Warehouse.Count; ++i)
             {
-                if (ForSale[i].Name == name)
+                if (Warehouse[i].Name == name)
                 {
-                    ForSale.RemoveAt(i);
+                    Warehouse.RemoveAt(i);
                     break;
                 }
             }

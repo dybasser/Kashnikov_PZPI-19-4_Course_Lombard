@@ -24,11 +24,6 @@ namespace LibraryPawnShop.Models
                 Price += pr.Price;
         }
 
-        public Deposit()
-        {
-
-        }
-
         public List<Product> Products { set; get; }
         public Client Client { set; get; }
         public DateTime DateTime { set; get; }

@@ -37,7 +37,7 @@ namespace LibraryPawnShop.DAL
                 Copy(sh.Products, Shop.Products);
                 Copy(sh.Clients, Shop.Clients);
                 Copy(sh.Deposits, Shop.Deposits);
-                Copy(sh.ForSale, Shop.ForSale);
+                Copy(sh.Warehouse, Shop.Warehouse);
                 Copy(sh.BannedUsers, Shop.BannedUsers);
             }
         }
