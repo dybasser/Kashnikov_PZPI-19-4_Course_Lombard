@@ -15,9 +15,9 @@ namespace LibraryPawnShop.Models
         const double CHANGE = 0.001;
         const double MAX = 0.03;
         const double MIN = 0.005;
-        const int MONTHDAYS = 31;
         const string REPORT = "report.txt";
         public bool IsDirty;
+        public List<string> BannedUsers;
         public List<Deposit> Deposits { private set; get; }
         public List<Client> Clients { private set; get; }
         public List<Product> Products { private set; get; }
@@ -30,6 +30,7 @@ namespace LibraryPawnShop.Models
             Products = new List<Product>();
             ForSale = new List<Product>();
             IsDirty = false;
+            BannedUsers = new List<string>();
         }
 
         public void FillTestData(int n)
@@ -139,6 +140,21 @@ namespace LibraryPawnShop.Models
                 double temp = STARTRATE - ((client.Rank - (client.Rank % RANKUP)) / RANKUP * CHANGE);
                 if (temp <= MIN) return MIN;
                 else return temp;
+            }
+        }
+
+        public void GetTicket(Deposit dep)
+        {
+            using (var field = new StreamWriter(REPORT))
+            {
+                field.WriteLine($"Имя депозита: {dep.Name}");
+                field.WriteLine($"Цена депозита: {dep.Price}");
+                field.WriteLine($"Кол-во вещей: {dep.Products.Count}");
+                field.WriteLine($"Процентная ставка: {GetRate(dep.Client) * 100}%");
+                field.WriteLine($"Имя клиента: {dep.Client.Name}");
+                field.WriteLine($"Дата создания: {dep.DateTime}");
+                field.WriteLine($"Последняя дата выкупа: {dep.DateTimeBuyOut}");
+                field.WriteLine();
             }
         }
 

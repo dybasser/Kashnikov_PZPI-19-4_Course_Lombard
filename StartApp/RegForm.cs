@@ -14,24 +14,34 @@ namespace StartApp
     public partial class RegForm : Form
     {
         List<Client> Clients;
+        List<string> Banned;
 
-        public RegForm(List<Client> clients)
+        public RegForm(List<Client> clients, List<string> banned)
         {
             InitializeComponent();
             Clients = clients;
+            Banned = banned;
         }
 
         private void RegButton_Click(object sender, EventArgs e)
         {
-            Clients.Add(new Client()
+            if (Banned.Contains(EmailBox.Text))
             {
-                Name = NameBox.Text,
-                Email = EmailBox.Text,
-                Age = Convert.ToInt32(AgeBox.Text),
-                Password = PasswordBox.Text,
-                Rank = 0
-            });
-            this.Close();
+                MessageBox.Show("Реєстрація з цією поштою неможлива. Пошта забанена.");
+                return;
+            }
+            else
+            {
+                Clients.Add(new Client()
+                {
+                    Name = NameBox.Text,
+                    Email = EmailBox.Text,
+                    Age = Convert.ToInt32(AgeBox.Text),
+                    Password = PasswordBox.Text,
+                    Rank = 0
+                });
+                Close();
+            }
         }
     }
 }

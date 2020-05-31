@@ -130,6 +130,7 @@ namespace AdminApp
                     }
                 }
                 DateCheck.PerformClick();
+                Shop.BannedUsers.Add(client.Email);
                 Shop.Clients.Remove(client);
                 ClientBindingSource.ResetBindings(false);
             }

@@ -38,6 +38,7 @@ namespace LibraryPawnShop.DAL
                 Copy(sh.Clients, Shop.Clients);
                 Copy(sh.Deposits, Shop.Deposits);
                 Copy(sh.ForSale, Shop.ForSale);
+                Copy(sh.BannedUsers, Shop.BannedUsers);
             }
         }
         private void Copy<T>(List<T> from, List<T> to)

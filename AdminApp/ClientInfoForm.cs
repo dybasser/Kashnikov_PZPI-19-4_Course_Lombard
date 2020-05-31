@@ -173,6 +173,11 @@ namespace AdminApp
             MessageBox.Show("Срок кредита: 60 дней\n" +
                 $"Размер кредита: {dep.Price} грн\n" +
                 $"Процентная ставка: {Shop.GetRate(Client)*100}%");
+            if (MessageBox.Show("Вы желаете сохранить залоговый билет?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Form ticket = new ReportForm(Shop, dep);
+                ticket.ShowDialog();
+            }
             Shop.Deposits.Add(dep);
             Products.Clear();
             productBindingSource1.ResetBindings(false);
@@ -229,6 +234,11 @@ namespace AdminApp
         private void вернутьЗаймToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BuyOutButton.PerformClick();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms[0].Close();
         }
     }
 }

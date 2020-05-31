@@ -79,6 +79,7 @@
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьЗаймToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -492,7 +493,8 @@
             this.menuStrip.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.текущийДепозитToolStripMenuItem,
-            this.вернутьЗаймToolStripMenuItem});
+            this.вернутьЗаймToolStripMenuItem,
+            this.выходToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(706, 24);
@@ -512,21 +514,21 @@
             // создатьДепозитToolStripMenuItem
             // 
             this.создатьДепозитToolStripMenuItem.Name = "создатьДепозитToolStripMenuItem";
-            this.создатьДепозитToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьДепозитToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.создатьДепозитToolStripMenuItem.Text = "Создать депозит";
             this.создатьДепозитToolStripMenuItem.Click += new System.EventHandler(this.создатьДепозитToolStripMenuItem_Click);
             // 
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -536,6 +538,13 @@
             this.вернутьЗаймToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.вернутьЗаймToolStripMenuItem.Text = "Вернуть займ";
             this.вернутьЗаймToolStripMenuItem.Click += new System.EventHandler(this.вернутьЗаймToolStripMenuItem_Click);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // ClientInfoForm
             // 
@@ -630,5 +639,6 @@
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьДепозитToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вернутьЗаймToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }

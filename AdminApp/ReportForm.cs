@@ -17,6 +17,15 @@ namespace AdminApp
         const string REPORT = "report.txt";
         
 
+
+        public ReportForm(PawnShop shop, Deposit dep)
+        {
+            InitializeComponent();
+            saveFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            shop.GetTicket(dep);
+            ReportBox.Text = File.ReadAllText(REPORT);
+        }
+
         public ReportForm(PawnShop shop)
         {
             InitializeComponent();
@@ -31,7 +40,7 @@ namespace AdminApp
                 return;
             string fileName = saveFileDialog1.FileName;
             File.WriteAllText(fileName, ReportBox.Text);
-            MessageBox.Show("Файл сохранен");
+            MessageBox.Show("Файл успешно сохранен!");
         }
 
         private void ReportForm_Load(object sender, EventArgs e)

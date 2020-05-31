@@ -74,6 +74,7 @@
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ReportBox);
             this.Name = "ReportForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отчёт";
             this.Load += new System.EventHandler(this.ReportForm_Load);
             this.ResumeLayout(false);

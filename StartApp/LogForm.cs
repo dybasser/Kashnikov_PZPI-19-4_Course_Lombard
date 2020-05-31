@@ -29,7 +29,8 @@ namespace StartApp
             Shop = new PawnShop();
             if (File.Exists("shop.bin"))
                 Shop.Load();
-            //Shop.FillTestData(100);
+            else
+                Shop.FillTestData(100);
             using (var rd = new StreamReader(adminPass))
             {
                 admlogin = rd.ReadLine();
@@ -70,7 +71,7 @@ namespace StartApp
 
         private void SingUpButton_Click(object sender, EventArgs e)
         {
-            RegForm reg = new RegForm(Shop.Clients);
+            RegForm reg = new RegForm(Shop.Clients, Shop.BannedUsers);
             this.Visible = false;
             if (reg.ShowDialog() == DialogResult.OK)
             {
