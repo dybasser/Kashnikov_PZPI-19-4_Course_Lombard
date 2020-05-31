@@ -48,6 +48,7 @@ namespace AdminApp
                 productBindingSource.DataSource = Deposits[0].Products;
                 DateTimeBox.Text = Deposits[0].DateTime.ToString();
                 DateTimeBuyOutBox.Text = Deposits[0].DateTimeBuyOut.ToString();
+                PriceBox.Text = Deposits[0].Price.ToString();
 
             }
             else
@@ -64,6 +65,7 @@ namespace AdminApp
                     productBindingSource.DataSource = dep.Products;
                     DateTimeBox.Text = dep.DateTime.ToString();
                     DateTimeBuyOutBox.Text = dep.DateTimeBuyOut.ToString();
+                    PriceBox.Text = dep.Price.ToString();
                 }
             }
 
@@ -71,7 +73,25 @@ namespace AdminApp
 
         private void BuyOut_Click(object sender, EventArgs e)
         {
-            var res = MessageBox.Show("Are you sure?", "", MessageBoxButtons.YesNo);
+            if (Shop.Deposits[Shop.IndOfDepByName(DepositComboBox.Text)].DateTimeBuyOut <= DateTime.Now)
+            {
+                MessageBox.Show("Срок кредита истёк!");
+                --Client.Rank;
+                Shop.Deposits.RemoveAt(Shop.IndOfDepByName(DepositComboBox.Text));
+                Deposits = Shop.FindDepositsByClient(Client);
+                depositBindingSource.DataSource = Deposits;
+                if (Deposits.Count != 0)
+                    productBindingSource.DataSource = Shop.Deposits[Shop.IndOfDepByName(DepositComboBox.Text)].Products;
+                else
+                {
+                    productBindingSource.DataSource = null;
+                    DateTimeBox.Clear();
+                    DateTimeBuyOutBox.Clear();
+                    PriceBox.Clear();
+                }
+                return;
+            }
+            var res = MessageBox.Show($"К оплате {Shop.GetPrice(Shop.FindDepByName(DepositComboBox.Text), Client)} грн. Подтвердить действие?", "", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
                 string name = DepositComboBox.Text;
@@ -80,9 +100,18 @@ namespace AdminApp
                     Shop.Deposits.RemoveAt(Shop.IndOfDepByName(name));
                     Deposits = Shop.FindDepositsByClient(Client);
                     depositBindingSource.DataSource = Deposits;
-                    productBindingSource.DataSource = null;
+                    if (Deposits.Count != 0)
+                        productBindingSource.DataSource = Shop.Deposits[Shop.IndOfDepByName(DepositComboBox.Text)].Products;
+                    else
+                    {
+                        productBindingSource.DataSource = null;
+                        DateTimeBox.Clear();
+                        DateTimeBuyOutBox.Clear();
+                        PriceBox.Clear();
+                    }
                 }
                 Shop.IsDirty = true;
+                ++Client.Rank;
             }
             if (Deposits.Count == 0) BuyOutButton.Enabled = false;
         }
@@ -93,7 +122,9 @@ namespace AdminApp
             if (loan.ShowDialog() == DialogResult.OK)
             {
                 productBindingSource1.ResetBindings(false);
+                GetLoan.Enabled = true;
             }
+            DeleteButton.Enabled = true;
         }
 
         private void ClientInfoForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -123,25 +154,58 @@ namespace AdminApp
 
         private void GetLoan_Click(object sender, EventArgs e)
         {
-            if (Products.Count == 0)
+            if (DepositName.Text == "")
             {
-                MessageBox.Show("You must add at least one item!");
+                MessageBox.Show("Введите имя депозита!");
                 return;
             }
-            else if (DepositName.Text == "")
+            else if (Shop.IndOfDepByName(DepositName.Text) != -1)
             {
-                MessageBox.Show("You must enter Deposit's name!");
+                MessageBox.Show("Депозит с таким именем уже существует! Попробуйте другое!");
+                DepositName.Clear();
                 return;
             }
             string name = DepositName.Text;
             Deposit dep = new Deposit(Products, Client) { Name = name};
+            MessageBox.Show("Срок кредита: 60 дней\n" +
+                $"Размер кредита: {dep.Price} грн\n" +
+                $"Процентная ставка: {Shop.GetRate(Client)*100}%");
             Shop.Deposits.Add(dep);
             Products.Clear();
-            productBindingSource1.DataSource = null;
+            productBindingSource1.ResetBindings(false);
             Deposits = Shop.FindDepositsByClient(Client);
             depositBindingSource.DataSource = Deposits;
             Shop.IsDirty = true;
             BuyOutButton.Enabled = true;
+            GetLoan.Enabled = false;
+            DepositName.Clear();
+            if (Deposits.Count == 1)
+            {
+                productBindingSource.DataSource = Deposits[0].Products;
+                DateTimeBox.Text = Deposits[0].DateTime.ToString();
+                DateTimeBuyOutBox.Text = Deposits[0].DateTimeBuyOut.ToString();
+                PriceBox.Text = Deposits[0].Price.ToString();
+            }
+               
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            if (Products.Count != 0)
+            {
+                string name = (string)CurrentDeposit.Rows[0].Cells[0].Value;
+                for (int i = 0; i < Products.Count; ++i)
+                {
+                    if (Products[i].Name == name)
+                    {
+                        Products.RemoveAt(i);
+                        productBindingSource1.ResetBindings(false);
+                        break;
+                    }
+                }
+            }
+
+            if (Products.Count == 0) DeleteButton.Enabled = false;
         }
     }
 }

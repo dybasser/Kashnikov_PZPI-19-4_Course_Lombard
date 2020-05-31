@@ -19,6 +19,9 @@ namespace LibraryPawnShop.Models
             else
                 DateTime = (DateTime)t;
             DateTimeBuyOut = DateTime.AddSeconds(10);
+            Price = 0;
+            foreach (var pr in products)
+                Price += pr.Price;
         }
 
         public Deposit()
@@ -30,6 +33,7 @@ namespace LibraryPawnShop.Models
         public Client Client { set; get; }
         public DateTime DateTime { set; get; }
         public DateTime DateTimeBuyOut { set; get; }
+        public decimal Price { private set; get; }
         public string Name { get; set; }
     }
 }

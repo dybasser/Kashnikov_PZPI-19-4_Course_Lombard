@@ -7,12 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Data;
+using System.Windows.Forms;
 
 namespace LibraryPawnShop.Models
 {
     [Serializable]
     public class PawnShop
     {
+        const int RankUp = 10;
+        const int RankDown = 5;
+        const double StartRate = 0.01;
+        const double Change = 0.001;
+        const double Max = 0.03;
+        const double Min = 0.005;
+
         public bool IsDirty;
         public List<Deposit> Deposits { private set; get; }
         public List<Client> Clients { private set; get; }
@@ -119,6 +127,38 @@ namespace LibraryPawnShop.Models
                 if (cl.Email == email) return cl;
             }
             return null;
+        }
+
+        public double GetRate(Client client)
+        {
+            if (client.Rank < 0)
+            {
+                double temp = StartRate + ((-client.Rank - (-client.Rank % RankDown)) / RankDown * Change);
+                if (temp >= Max) return Max;
+                else return temp;
+            }
+            else if (client.Rank == 0) return StartRate;
+            else
+            {
+                double temp = StartRate - ((client.Rank - (client.Rank % RankUp)) / RankUp * Change);
+                if (temp <= Min) return Min;
+                else return temp;
+            }
+        }
+
+        public Deposit FindDepByName(string name)
+        {
+            foreach (var dep in Deposits)
+            {
+                if (dep.Name == name)
+                    return dep;
+            }
+            return null;
+        }
+
+        public decimal GetPrice(Deposit dep, Client client)
+        {
+            return dep.Price + dep.Price * (DateTime.Now - dep.DateTime).Seconds * Convert.ToDecimal(GetRate(client));
         }
 
         public void Save()

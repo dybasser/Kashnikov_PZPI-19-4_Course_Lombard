@@ -31,26 +31,6 @@ namespace AdminApp
             SilverComboBox.Enabled = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string name = NameBox.Text;
-            string type = TypeComboBox.Text;
-            double weight = Convert.ToDouble(WeightField.Value);
-            int sample;
-            if (GoldComboBox.Visible == true) sample = Convert.ToInt32(GoldComboBox.Text);
-            else sample = Convert.ToInt32(SilverComboBox.Text);
-            Products.Add(new Product()
-            {
-                Name = name,
-                Type = type,
-                Weight = weight,
-                Sample = sample,
-                Image = pictureBox1.Image,
-                Price = PriceFunc(type, sample, weight)
-            });
-            Close();
-        }
-
         private decimal PriceFunc(string type, int sample, double weight)
         {
             decimal price;
@@ -77,6 +57,56 @@ namespace AdminApp
                 GoldComboBox.Enabled = false;
                 SilverComboBox.Enabled = true;
             }    
+        }
+
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (NameBox.Text == "" || TypeComboBox.Text == "" || WeightField.Value == 0 || (GoldComboBox.Text == "" && SilverComboBox.Text == ""))
+            {
+                MessageBox.Show("You must fill all fields!");
+                return;
+            }
+            else
+            {
+                string name = NameBox.Text;
+                string type = TypeComboBox.Text;
+                double weight = Convert.ToDouble(WeightField.Value);
+                int sample;
+                if (type == GOLD) sample = Convert.ToInt32(GoldComboBox.Text);
+                else sample = Convert.ToInt32(SilverComboBox.Text);
+                Products.Add(new Product()
+                {
+                    Name = name,
+                    Type = type,
+                    Weight = weight,
+                    Sample = sample,
+                    Image = pictureBox1.Image,
+                    Price = PriceFunc(type, sample, weight)
+                });
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+
+            
+        }
+
+        private void chooseImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                    pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+            }
+            catch
+            {
+                MessageBox.Show("You must choose image file!(JPG, PNG, etc)");
+            }
+            
         }
     }
 }
