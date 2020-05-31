@@ -22,7 +22,6 @@ namespace AdminApp
             InitializeComponent();
             Shop = shop;
             ClientBindingSource.DataSource = Shop.Clients;
-            DepositBindingSource.DataSource = Shop.Deposits;
             ForSaleBindingSource.DataSource = Shop.ForSale;
         }
 
@@ -57,7 +56,6 @@ namespace AdminApp
             Shop.DateCheck();
             if (Shop.ForSale.Count > n)
             {
-                DepositBindingSource.ResetBindings(false);
                 ForSaleBindingSource.ResetBindings(false);
             }
         }
@@ -103,17 +101,14 @@ namespace AdminApp
             report.ShowDialog();
         }
 
-        private void ClientsGrid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-
-        }
-
         private void RankButton_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < ClientsGrid.Rows.Count; ++i)
             {
                 if ((int)ClientsGrid["rankDataGridViewTextBoxColumn", i].Value < -5)
                     ClientsGrid.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                else
+                    ClientsGrid.Rows[i].DefaultCellStyle.BackColor = Color.White;
             }
         }
 
@@ -138,6 +133,25 @@ namespace AdminApp
             {
 
             }
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form1_FormClosing(this, null);
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Shop.IsDirty = false;
+            Shop.Save();
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Shop.Load();
+            ClientBindingSource.ResetBindings(false);
+            ForSaleBindingSource.ResetBindings(false);
+            Shop.IsDirty = false;
         }
     }
 }
