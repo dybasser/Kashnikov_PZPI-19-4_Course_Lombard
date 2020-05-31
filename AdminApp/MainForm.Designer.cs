@@ -39,6 +39,12 @@
             this.DateCheck = new System.Windows.Forms.Button();
             this.DepositBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ForSaleGrid = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sampleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.ForSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Delete = new System.Windows.Forms.Button();
             this.ReportButton = new System.Windows.Forms.Button();
@@ -48,6 +54,7 @@
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.warehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,13 +64,6 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sampleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.getReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ClientsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepositBindingSource)).BeginInit();
@@ -170,6 +170,49 @@
             this.ForSaleGrid.Size = new System.Drawing.Size(309, 399);
             this.ForSaleGrid.TabIndex = 6;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Тип";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // weightDataGridViewTextBoxColumn
+            // 
+            this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
+            this.weightDataGridViewTextBoxColumn.HeaderText = "Вес";
+            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+            this.weightDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sampleDataGridViewTextBoxColumn
+            // 
+            this.sampleDataGridViewTextBoxColumn.DataPropertyName = "Sample";
+            this.sampleDataGridViewTextBoxColumn.HeaderText = "Проба";
+            this.sampleDataGridViewTextBoxColumn.Name = "sampleDataGridViewTextBoxColumn";
+            this.sampleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.HeaderText = "Изображение";
+            this.imageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
+            // 
             // ForSaleBindingSource
             // 
             this.ForSaleBindingSource.DataSource = typeof(LibraryPawnShop.Models.Product);
@@ -241,16 +284,23 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.saveToolStripMenuItem.Text = "Сохранить";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.loadToolStripMenuItem.Text = "Загрузить";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // getReportToolStripMenuItem
+            // 
+            this.getReportToolStripMenuItem.Name = "getReportToolStripMenuItem";
+            this.getReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getReportToolStripMenuItem.Text = "Получить отчёт";
+            this.getReportToolStripMenuItem.Click += new System.EventHandler(this.getReportToolStripMenuItem_Click);
             // 
             // warehouseToolStripMenuItem
             // 
@@ -264,13 +314,13 @@
             // checkDatesToolStripMenuItem
             // 
             this.checkDatesToolStripMenuItem.Name = "checkDatesToolStripMenuItem";
-            this.checkDatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkDatesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.checkDatesToolStripMenuItem.Text = "Проверить даты";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.deleteToolStripMenuItem.Text = "Удалить";
             // 
             // clientsToolStripMenuItem
@@ -287,12 +337,14 @@
             this.unreliableToolStripMenuItem.Name = "unreliableToolStripMenuItem";
             this.unreliableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.unreliableToolStripMenuItem.Text = "Ненадёжные";
+            this.unreliableToolStripMenuItem.Click += new System.EventHandler(this.unreliableToolStripMenuItem_Click);
             // 
             // banToolStripMenuItem
             // 
             this.banToolStripMenuItem.Name = "banToolStripMenuItem";
             this.banToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.banToolStripMenuItem.Text = "Забанить";
+            this.banToolStripMenuItem.Click += new System.EventHandler(this.banToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
@@ -320,55 +372,6 @@
             this.label2.Size = new System.Drawing.Size(94, 31);
             this.label2.TabIndex = 13;
             this.label2.Text = "Склад";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Тип";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // weightDataGridViewTextBoxColumn
-            // 
-            this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
-            this.weightDataGridViewTextBoxColumn.HeaderText = "Вес";
-            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
-            this.weightDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sampleDataGridViewTextBoxColumn
-            // 
-            this.sampleDataGridViewTextBoxColumn.DataPropertyName = "Sample";
-            this.sampleDataGridViewTextBoxColumn.HeaderText = "Проба";
-            this.sampleDataGridViewTextBoxColumn.Name = "sampleDataGridViewTextBoxColumn";
-            this.sampleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imageDataGridViewImageColumn
-            // 
-            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
-            this.imageDataGridViewImageColumn.HeaderText = "Изображение";
-            this.imageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
-            this.imageDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // getReportToolStripMenuItem
-            // 
-            this.getReportToolStripMenuItem.Name = "getReportToolStripMenuItem";
-            this.getReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.getReportToolStripMenuItem.Text = "Получить отчёт";
             // 
             // MainForm
             // 

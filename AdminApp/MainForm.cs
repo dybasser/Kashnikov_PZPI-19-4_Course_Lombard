@@ -117,7 +117,7 @@ namespace AdminApp
         {
             try
             {
-                Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[0].Value);
+                Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[1].Value);
                 foreach (var dep in Shop.Deposits)
                 {
                     if (dep.Client == client)
@@ -138,7 +138,7 @@ namespace AdminApp
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form1_FormClosing(this, null);
+            Close();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,6 +153,21 @@ namespace AdminApp
             ClientBindingSource.ResetBindings(false);
             ForSaleBindingSource.ResetBindings(false);
             Shop.IsDirty = false;
+        }
+
+        private void unreliableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RankButton.PerformClick();
+        }
+
+        private void banToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BanButton.PerformClick();
+        }
+
+        private void getReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportButton.PerformClick();
         }
     }
 }

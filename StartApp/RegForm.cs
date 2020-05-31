@@ -27,20 +27,31 @@ namespace StartApp
         {
             if (Banned.Contains(EmailBox.Text))
             {
-                MessageBox.Show("Реєстрація з цією поштою неможлива. Пошта забанена.");
-                return;
+                MessageBox.Show("Регистрация невозможна. Почта забанена.");
             }
+            else if (NameBox.Text == "" || EmailBox.Text == "" || PasswordBox.Text == "")
+            {
+                MessageBox.Show("Заполните поля корректно!");
+            }
+            
             else
             {
-                Clients.Add(new Client()
+                try
                 {
-                    Name = NameBox.Text,
-                    Email = EmailBox.Text,
-                    Age = Convert.ToInt32(AgeBox.Text),
-                    Password = PasswordBox.Text,
-                    Rank = 0
-                });
-                Close();
+                    Clients.Add(new Client()
+                    {
+                        Name = NameBox.Text,
+                        Email = EmailBox.Text,
+                        Age = Convert.ToInt32(AgeBox.Text),
+                        Password = PasswordBox.Text,
+                        Rank = 0
+                    });
+                    Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Заполните поля корректно!");
+                }
             }
         }
     }
