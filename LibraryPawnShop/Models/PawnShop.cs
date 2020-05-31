@@ -1,26 +1,22 @@
 ﻿using LibraryPawnShop.DAL;
 using System;
-using System.Drawing;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.IO;
-using System.Data;
-using System.Windows.Forms;
 
 namespace LibraryPawnShop.Models
 {
     [Serializable]
     public class PawnShop
     {
-        const int RankUp = 10;
-        const int RankDown = 5;
-        const double StartRate = 0.01;
-        const double Change = 0.001;
-        const double Max = 0.03;
-        const double Min = 0.005;
-
+        const int RANKUP = 10;
+        const int RANKDOWN = 5;
+        const double STARTRATE = 0.01;
+        const double CHANGE = 0.001;
+        const double MAX = 0.03;
+        const double MIN = 0.005;
+        const int MONTHDAYS = 31;
+        const string REPORT = "report.txt";
         public bool IsDirty;
         public List<Deposit> Deposits { private set; get; }
         public List<Client> Clients { private set; get; }
@@ -50,7 +46,7 @@ namespace LibraryPawnShop.Models
                     {
                         Name = $"Product{j}",
                         Price = i * 10,
-                        Type = (j % 2 == 0) ? "gold" : "silver",
+                        Type = (j % 2 == 0) ? "золото" : "серебро",
                         Weight = weight,
                         Sample = 999,
                         Image = noImage
@@ -133,15 +129,15 @@ namespace LibraryPawnShop.Models
         {
             if (client.Rank < 0)
             {
-                double temp = StartRate + ((-client.Rank - (-client.Rank % RankDown)) / RankDown * Change);
-                if (temp >= Max) return Max;
+                double temp = STARTRATE + ((-client.Rank - (-client.Rank % RANKDOWN)) / RANKDOWN * CHANGE);
+                if (temp >= MAX) return MAX;
                 else return temp;
             }
-            else if (client.Rank == 0) return StartRate;
+            else if (client.Rank == 0) return STARTRATE;
             else
             {
-                double temp = StartRate - ((client.Rank - (client.Rank % RankUp)) / RankUp * Change);
-                if (temp <= Min) return Min;
+                double temp = STARTRATE - ((client.Rank - (client.Rank % RANKUP)) / RANKUP * CHANGE);
+                if (temp <= MIN) return MIN;
                 else return temp;
             }
         }
@@ -154,6 +150,24 @@ namespace LibraryPawnShop.Models
                     return dep;
             }
             return null;
+        }
+
+        public void GetReport()
+        {
+            using (var field = new StreamWriter(REPORT))
+            {
+                foreach (var dep in Deposits)
+                {
+                    field.WriteLine($"Имя депозита: {dep.Name}");
+                    field.WriteLine($"Цена депозита: {dep.Price}");
+                    field.WriteLine($"Кол-во вещей: {dep.Products.Count}");
+                    field.WriteLine($"Процентная ставка: {GetRate(dep.Client) * 100}%");
+                    field.WriteLine($"Имя клиента: {dep.Client.Name}");
+                    field.WriteLine($"Дата создания: {dep.DateTime}");
+                    field.WriteLine($"Последняя дата выкупа: {dep.DateTimeBuyOut}");
+                    field.WriteLine();
+                }
+            }
         }
 
         public decimal GetPrice(Deposit dep, Client client)

@@ -69,14 +69,16 @@
             this.GetLoan = new System.Windows.Forms.Button();
             this.DepositName = new System.Windows.Forms.TextBox();
             this.LoanBox = new System.Windows.Forms.GroupBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.PriceBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.текущийДепозитToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьДепозитToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вернутьЗаймToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.depositBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -84,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurrentDeposit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             this.LoanBox.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // DepositComboBox
@@ -447,6 +449,17 @@
             this.LoanBox.TabIndex = 24;
             this.LoanBox.TabStop = false;
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Enabled = false;
+            this.DeleteButton.Location = new System.Drawing.Point(211, 22);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteButton.TabIndex = 25;
+            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.Delete_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -474,48 +487,55 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Цена(грн)";
             // 
-            // DeleteButton
+            // menuStrip
             // 
-            this.DeleteButton.Enabled = false;
-            this.DeleteButton.Location = new System.Drawing.Point(211, 22);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.DeleteButton.TabIndex = 25;
-            this.DeleteButton.Text = "Удалить";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.текущийДепозитToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(706, 24);
-            this.menuStrip1.TabIndex = 27;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.текущийДепозитToolStripMenuItem,
+            this.вернутьЗаймToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(706, 24);
+            this.menuStrip.TabIndex = 27;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // текущийДепозитToolStripMenuItem
             // 
             this.текущийДепозитToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.создатьДепозитToolStripMenuItem,
             this.добавитьToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.текущийДепозитToolStripMenuItem.Name = "текущийДепозитToolStripMenuItem";
             this.текущийДепозитToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.текущийДепозитToolStripMenuItem.Text = "Текущий депозит";
             // 
+            // создатьДепозитToolStripMenuItem
+            // 
+            this.создатьДепозитToolStripMenuItem.Name = "создатьДепозитToolStripMenuItem";
+            this.создатьДепозитToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьДепозитToolStripMenuItem.Text = "Создать депозит";
+            this.создатьДепозитToolStripMenuItem.Click += new System.EventHandler(this.создатьДепозитToolStripMenuItem_Click);
+            // 
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
             this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            // 
+            // вернутьЗаймToolStripMenuItem
+            // 
+            this.вернутьЗаймToolStripMenuItem.Name = "вернутьЗаймToolStripMenuItem";
+            this.вернутьЗаймToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.вернутьЗаймToolStripMenuItem.Text = "Вернуть займ";
+            this.вернутьЗаймToolStripMenuItem.Click += new System.EventHandler(this.вернутьЗаймToolStripMenuItem_Click);
             // 
             // ClientInfoForm
             // 
@@ -534,8 +554,8 @@
             this.Controls.Add(this.ProductGrid);
             this.Controls.Add(this.DepComboBoxLabel);
             this.Controls.Add(this.DepositComboBox);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "ClientInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientInfoForm";
@@ -549,8 +569,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             this.LoanBox.ResumeLayout(false);
             this.LoanBox.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,9 +624,11 @@
         private System.Windows.Forms.TextBox PriceBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem текущийДепозитToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem создатьДепозитToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вернутьЗаймToolStripMenuItem;
     }
 }

@@ -59,20 +59,20 @@
             this.SignInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SignInButton.Location = new System.Drawing.Point(12, 123);
             this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(75, 37);
+            this.SignInButton.Size = new System.Drawing.Size(61, 37);
             this.SignInButton.TabIndex = 2;
-            this.SignInButton.Text = "Sign In";
+            this.SignInButton.Text = "Вход";
             this.SignInButton.UseVisualStyleBackColor = true;
             this.SignInButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // SingUpButton
             // 
             this.SingUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SingUpButton.Location = new System.Drawing.Point(111, 123);
+            this.SingUpButton.Location = new System.Drawing.Point(79, 123);
             this.SingUpButton.Name = "SingUpButton";
-            this.SingUpButton.Size = new System.Drawing.Size(75, 37);
+            this.SingUpButton.Size = new System.Drawing.Size(107, 37);
             this.SingUpButton.TabIndex = 3;
-            this.SingUpButton.Text = "Sign Up";
+            this.SingUpButton.Text = "Регистрация";
             this.SingUpButton.UseVisualStyleBackColor = true;
             this.SingUpButton.Click += new System.EventHandler(this.SingUpButton_Click);
             // 
@@ -82,9 +82,9 @@
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EmailLabel.Location = new System.Drawing.Point(12, 11);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(39, 15);
+            this.EmailLabel.Size = new System.Drawing.Size(43, 15);
             this.EmailLabel.TabIndex = 4;
-            this.EmailLabel.Text = "Email";
+            this.EmailLabel.Text = "Почта";
             // 
             // PasswordLabel
             // 
@@ -92,9 +92,9 @@
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PasswordLabel.Location = new System.Drawing.Point(12, 64);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(61, 15);
+            this.PasswordLabel.Size = new System.Drawing.Size(51, 15);
             this.PasswordLabel.TabIndex = 5;
-            this.PasswordLabel.Text = "Password";
+            this.PasswordLabel.Text = "Пароль";
             // 
             // LogForm
             // 
@@ -112,7 +112,7 @@
             this.MinimumSize = new System.Drawing.Size(214, 210);
             this.Name = "LogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sign In";
+            this.Text = "Вход";
             this.ResumeLayout(false);
             this.PerformLayout();
 

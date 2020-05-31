@@ -18,7 +18,8 @@ namespace AdminApp
 
         const decimal goldCoeff = 0.9m;
         const decimal silverCoeff = 0.014m;
-        const string GOLD = "gold";
+        const string GOLD = "золото";
+        const string SILVER = "серебро";
 
         public LoanForm(List<Product> products)
         {
@@ -68,7 +69,7 @@ namespace AdminApp
         {
             if (NameBox.Text == "" || TypeComboBox.Text == "" || WeightField.Value == 0 || (GoldComboBox.Text == "" && SilverComboBox.Text == ""))
             {
-                MessageBox.Show("You must fill all fields!");
+                MessageBox.Show("Все поля должны быть заполнены корректно!");
                 return;
             }
             else
@@ -78,7 +79,12 @@ namespace AdminApp
                 double weight = Convert.ToDouble(WeightField.Value);
                 int sample;
                 if (type == GOLD) sample = Convert.ToInt32(GoldComboBox.Text);
-                else sample = Convert.ToInt32(SilverComboBox.Text);
+                else if (type == SILVER) sample = Convert.ToInt32(SilverComboBox.Text);
+                else
+                {
+                    MessageBox.Show("Все поля должны быть заполнены корректно!");
+                    return;
+                }
                 Products.Add(new Product()
                 {
                     Name = name,
@@ -104,7 +110,7 @@ namespace AdminApp
             }
             catch
             {
-                MessageBox.Show("You must choose image file!(JPG, PNG, etc)");
+                MessageBox.Show("Выберите изображение!(JPG, PNG, и т.д.)");
             }
             
         }

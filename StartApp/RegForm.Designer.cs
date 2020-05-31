@@ -41,30 +41,34 @@
             // 
             // NameBox
             // 
+            this.NameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NameBox.Location = new System.Drawing.Point(12, 27);
             this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(100, 20);
+            this.NameBox.Size = new System.Drawing.Size(166, 20);
             this.NameBox.TabIndex = 0;
             // 
             // EmailBox
             // 
-            this.EmailBox.Location = new System.Drawing.Point(162, 27);
+            this.EmailBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmailBox.Location = new System.Drawing.Point(12, 80);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(100, 20);
+            this.EmailBox.Size = new System.Drawing.Size(166, 20);
             this.EmailBox.TabIndex = 1;
             // 
             // AgeBox
             // 
-            this.AgeBox.Location = new System.Drawing.Point(15, 80);
+            this.AgeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AgeBox.Location = new System.Drawing.Point(12, 131);
             this.AgeBox.Name = "AgeBox";
-            this.AgeBox.Size = new System.Drawing.Size(100, 20);
+            this.AgeBox.Size = new System.Drawing.Size(42, 20);
             this.AgeBox.TabIndex = 2;
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(162, 80);
+            this.PasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PasswordBox.Location = new System.Drawing.Point(12, 188);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(100, 20);
+            this.PasswordBox.Size = new System.Drawing.Size(166, 20);
             this.PasswordBox.TabIndex = 3;
             this.PasswordBox.UseSystemPasswordChar = true;
             // 
@@ -73,45 +77,45 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Name";
+            this.label1.Text = "Имя";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 8);
+            this.label2.Location = new System.Drawing.Point(9, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Email";
+            this.label2.Text = "Почта";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 64);
+            this.label3.Location = new System.Drawing.Point(9, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Age";
+            this.label3.Text = "Возраст";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(159, 64);
+            this.label4.Location = new System.Drawing.Point(9, 172);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Password";
+            this.label4.Text = "Пароль";
             // 
             // RegButton
             // 
             this.RegButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.RegButton.Location = new System.Drawing.Point(13, 333);
+            this.RegButton.Location = new System.Drawing.Point(12, 232);
             this.RegButton.Name = "RegButton";
-            this.RegButton.Size = new System.Drawing.Size(119, 34);
+            this.RegButton.Size = new System.Drawing.Size(166, 31);
             this.RegButton.TabIndex = 8;
-            this.RegButton.Text = "Sign Up";
+            this.RegButton.Text = "Зарегистрироваться";
             this.RegButton.UseVisualStyleBackColor = true;
             this.RegButton.Click += new System.EventHandler(this.RegButton_Click);
             // 
@@ -119,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 390);
+            this.ClientSize = new System.Drawing.Size(227, 289);
             this.Controls.Add(this.RegButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -130,7 +134,8 @@
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.NameBox);
             this.Name = "RegForm";
-            this.Text = "RegForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

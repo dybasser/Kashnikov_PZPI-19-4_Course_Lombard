@@ -67,8 +67,8 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Items.AddRange(new object[] {
-            "gold",
-            "silver"});
+            "золото",
+            "серебро"});
             this.TypeComboBox.Location = new System.Drawing.Point(35, 125);
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(121, 21);

@@ -28,6 +28,7 @@ namespace AdminApp
             productBindingSource1.DataSource = Products;
             if (IsClient == false)
             {
+                Text = "Информация о клиенте";
                 InfoNameBox.Text = Client.Name;
                 InfoAgeBox.Text = Convert.ToString(Client.Age);
                 InfoEmailBox.Text = Client.Email;
@@ -35,9 +36,11 @@ namespace AdminApp
                 InfoRankBox.Text = Convert.ToString(Client.Rank);
                 BuyOutButton.Hide();
                 LoanBox.Hide();
+                menuStrip.Hide();
             }
             else
             {
+                Text = "Основное";
                 MainInfoBox.Hide();
                 CurrentDeposit.Show();
             }
@@ -206,6 +209,26 @@ namespace AdminApp
             }
 
             if (Products.Count == 0) DeleteButton.Enabled = false;
+        }
+
+        private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddProduct.PerformClick();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteButton.PerformClick();
+        }
+
+        private void создатьДепозитToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetLoan.PerformClick();
+        }
+
+        private void вернутьЗаймToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuyOutButton.PerformClick();
         }
     }
 }

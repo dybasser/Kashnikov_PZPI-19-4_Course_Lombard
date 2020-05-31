@@ -26,31 +26,11 @@ namespace AdminApp
             ForSaleBindingSource.DataSource = Shop.ForSale;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Shop.Load();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Shop.Save();
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Shop.IsDirty == true)
             {
-                var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
+                var res = MessageBox.Show("Сохраниться перед выходом?", "", MessageBoxButtons.YesNoCancel);
                 switch (res)
                 {
                     case DialogResult.Cancel:
@@ -71,30 +51,14 @@ namespace AdminApp
             }
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //var pf = new ProductForm();
-            //if (pf.ShowDialog() == DialogResult.OK)
-            //{
-            //    shop.Products.Add(pf.Product);
-                
-            //}
-            //productBindingSource.ResetBindings(false);
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             int n = Shop.ForSale.Count;
             Shop.DateCheck();
             if (Shop.ForSale.Count > n)
             {
-                DepositBindingSource.ResetBindings(true);
-                ForSaleBindingSource.ResetBindings(true);
+                DepositBindingSource.ResetBindings(false);
+                ForSaleBindingSource.ResetBindings(false);
             }
         }
 
@@ -109,26 +73,20 @@ namespace AdminApp
             {
                 string item = (string)ForSaleGrid.SelectedRows[0].Cells[0].Value;
                 Shop.ForSaleDelete(item);
-                ForSaleBindingSource.ResetBindings(true);
+                ForSaleBindingSource.ResetBindings(false);
             }
             catch
             {
-
+                MessageBox.Show("Список пуст!");
             }
             
-        }
-
-        private void ClientsGrid_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //while (ClientsGrid.SelectedRows.Count != 0)
-            //    ClientsGrid.SelectedRows[0].Selected = false;
         }
 
         private void ClientsGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-                Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[0].Value);
+                Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[1].Value);
                 ClientInfoForm clientInfoForm = new ClientInfoForm(client, Shop);
                 clientInfoForm.ShowDialog();
             }
@@ -139,14 +97,46 @@ namespace AdminApp
             
         }
 
-        private void ClientsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ReportButton_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show("cho");
+            Form report = new ReportForm(Shop);
+            report.ShowDialog();
         }
 
-        private void ClientsGrid_ColumnDividerDoubleClick(object sender, DataGridViewColumnDividerDoubleClickEventArgs e)
+        private void ClientsGrid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            //MessageBox.Show("right");
+
+        }
+
+        private void RankButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ClientsGrid.Rows.Count; ++i)
+            {
+                if ((int)ClientsGrid["rankDataGridViewTextBoxColumn", i].Value < -5)
+                    ClientsGrid.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            }
+        }
+
+        private void BanButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Client client = Shop.SearchClient((string)ClientsGrid.SelectedRows[0].Cells[0].Value);
+                foreach (var dep in Shop.Deposits)
+                {
+                    if (dep.Client == client)
+                    {
+                        dep.DateTimeBuyOut = dep.DateTime;
+                    }
+                }
+                DateCheck.PerformClick();
+                Shop.Clients.Remove(client);
+                ClientBindingSource.ResetBindings(false);
+            }
+            catch
+            {
+
+            }
         }
     }
 }
