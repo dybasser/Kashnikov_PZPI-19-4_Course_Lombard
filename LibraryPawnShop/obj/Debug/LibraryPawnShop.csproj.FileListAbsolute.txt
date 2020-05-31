@@ -1,0 +1,7 @@
+D:\учёба Ю\csh\pawnShop\LibraryPawnShop\bin\Debug\LibraryPawnShop.dll
+D:\учёба Ю\csh\pawnShop\LibraryPawnShop\bin\Debug\LibraryPawnShop.pdb
+D:\учёба Ю\csh\pawnShop\LibraryPawnShop\obj\Debug\LibraryPawnShop.csproj.CoreCompileInputs.cache
+D:\учёба Ю\csh\pawnShop\LibraryPawnShop\obj\Debug\LibraryPawnShop.dll
+D:\учёба Ю\csh\pawnShop\LibraryPawnShop\obj\Debug\LibraryPawnShop.pdb
+D:\учёба Ю\csh\pawnShop\LibraryPawnShop\bin\Debug\image.png
+D:\учёба Ю\csh\pawnShop\LibraryPawnShop\obj\Debug\LibraryPawnShop.csprojAssemblyReference.cache

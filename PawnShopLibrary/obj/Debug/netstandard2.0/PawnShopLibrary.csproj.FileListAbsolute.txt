@@ -1,0 +1,9 @@
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\bin\Debug\netstandard2.0\PawnShopLibrary.deps.json
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\bin\Debug\netstandard2.0\PawnShopLibrary.dll
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\bin\Debug\netstandard2.0\PawnShopLibrary.pdb
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\obj\Debug\netstandard2.0\PawnShopLibrary.csprojAssemblyReference.cache
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\obj\Debug\netstandard2.0\PawnShopLibrary.csproj.CoreCompileInputs.cache
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\obj\Debug\netstandard2.0\PawnShopLibrary.AssemblyInfoInputs.cache
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\obj\Debug\netstandard2.0\PawnShopLibrary.AssemblyInfo.cs
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\obj\Debug\netstandard2.0\PawnShopLibrary.dll
+D:\учёба Ю\csh\pawnShop\PawnShopLibrary\obj\Debug\netstandard2.0\PawnShopLibrary.pdb

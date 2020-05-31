@@ -1,0 +1,16 @@
+D:\учёба Ю\csh\pawnShop\AdminApp\bin\Debug\AdminApp.exe.config
+D:\учёба Ю\csh\pawnShop\AdminApp\bin\Debug\AdminApp.exe
+D:\учёба Ю\csh\pawnShop\AdminApp\bin\Debug\AdminApp.pdb
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.csprojAssemblyReference.cache
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.Properties.Resources.resources
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.csproj.GenerateResource.cache
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.csproj.CoreCompileInputs.cache
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.csproj.CopyComplete
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.exe
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.pdb
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.ProductForm.resources
+D:\учёба Ю\csh\pawnShop\AdminApp\bin\Debug\LibraryPawnShop.dll
+D:\учёба Ю\csh\pawnShop\AdminApp\bin\Debug\LibraryPawnShop.pdb
+D:\учёба Ю\csh\pawnShop\AdminApp\bin\Debug\image.png
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.ClientInfoForm.resources
+D:\учёба Ю\csh\pawnShop\AdminApp\obj\Debug\AdminApp.AdmForm.resources

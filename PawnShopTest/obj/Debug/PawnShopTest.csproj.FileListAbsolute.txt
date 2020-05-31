@@ -1,0 +1,17 @@
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\PawnShopTest.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\PawnShopTest.pdb
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\учёба Ю\csh\pawnShop\PawnShopTest\obj\Debug\PawnShopTest.csprojAssemblyReference.cache
+D:\учёба Ю\csh\pawnShop\PawnShopTest\obj\Debug\PawnShopTest.csproj.CoreCompileInputs.cache
+D:\учёба Ю\csh\pawnShop\PawnShopTest\obj\Debug\PawnShopTest.csproj.CopyComplete
+D:\учёба Ю\csh\pawnShop\PawnShopTest\obj\Debug\PawnShopTest.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\obj\Debug\PawnShopTest.pdb
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\image.png
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\LibraryPawnShop.dll
+D:\учёба Ю\csh\pawnShop\PawnShopTest\bin\Debug\LibraryPawnShop.pdb

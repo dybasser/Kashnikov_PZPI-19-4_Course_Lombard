@@ -1,0 +1,9 @@
+D:\учёба Ю\csh\pawnShop\pawnShop\bin\Debug\pawnShop.exe.config
+D:\учёба Ю\csh\pawnShop\pawnShop\bin\Debug\pawnShop.exe
+D:\учёба Ю\csh\pawnShop\pawnShop\bin\Debug\pawnShop.pdb
+D:\учёба Ю\csh\pawnShop\pawnShop\obj\Debug\pawnShop.csprojAssemblyReference.cache
+D:\учёба Ю\csh\pawnShop\pawnShop\obj\Debug\pawnShop.Properties.Resources.resources
+D:\учёба Ю\csh\pawnShop\pawnShop\obj\Debug\pawnShop.csproj.GenerateResource.cache
+D:\учёба Ю\csh\pawnShop\pawnShop\obj\Debug\pawnShop.csproj.CoreCompileInputs.cache
+D:\учёба Ю\csh\pawnShop\pawnShop\obj\Debug\pawnShop.exe
+D:\учёба Ю\csh\pawnShop\pawnShop\obj\Debug\pawnShop.pdb

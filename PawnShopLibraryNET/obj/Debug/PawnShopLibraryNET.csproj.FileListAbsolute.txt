@@ -1,0 +1,5 @@
+D:\учёба Ю\csh\pawnShop\PawnShopLibraryNET\bin\Debug\PawnShopLibraryNET.dll
+D:\учёба Ю\csh\pawnShop\PawnShopLibraryNET\bin\Debug\PawnShopLibraryNET.pdb
+D:\учёба Ю\csh\pawnShop\PawnShopLibraryNET\obj\Debug\PawnShopLibraryNET.csproj.CoreCompileInputs.cache
+D:\учёба Ю\csh\pawnShop\PawnShopLibraryNET\obj\Debug\PawnShopLibraryNET.dll
+D:\учёба Ю\csh\pawnShop\PawnShopLibraryNET\obj\Debug\PawnShopLibraryNET.pdb
